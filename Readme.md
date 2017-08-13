@@ -1,6 +1,7 @@
 # Личный проект «Седона»
 
 * Студент: [Иван Строков](https://up.htmlacademy.ru/htmlcss/18/user/449387).
+123
 * Наставник: [Филипп Шамсиев](https://up.htmlacademy.ru/htmlcss/18/user/70260).
 ---
 
