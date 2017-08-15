@@ -5,31 +5,36 @@
   <title>Document</title>
 </head>
 <body>
- 
-<!-------------------   Шапка сайта. Навигация.  ------------------->   
+  
+<!-- Шапка сайта. Навигация. -->
    
-  <header class="main-header">
+  <header class="main-header container">
+    <h2 class="visually-hidden">Навигация по сайту.</h2>
     <nav class="head-navigation">
       <ul class="site-navigation">
         <li><a href="#">Информация</a></li>
         <li><a href="#">Фото и видио</a></li>
-        <li><a href="#"><img src="http://placehold.it/137x70" alt="Logo Sedona"></a></li>
         <li><a href="#">Карта штата</a></li>
-        <li class="site-navigation-opened">Гостиницы<a href="#"></a></li>
+        <li><a href="hotels.html">Гостиницы</a></li>
       </ul>
+      <div class="logo">
+        <a href="#"><img src="http://placehold.it/137x70" alt="Logo Sedona"></a>
+      </div>
     </nav>
   </header>
   
-<!-------------------   Основной блок. Секция фильтров.  ------------------->  
- 
+<!-- Основной блок. Секция фильтров. -->  
+  
   <main class="container">
    <section class="filters">
     <h2 class="visual-hidden">Фильтры гостиниц</h2>
-      <form action="#" method="get" class="filter">
+    <form action="https://echo.htmlacademy.ru" method="get" class="filter">
+      
+      <!-- Фильтр №1. Инфраструктура.  -->
  
-        <fieldset>
+      <fieldset>
         <legend>Инфраструктура:</legend>
-        <ul class="infrastructure-filter">
+        <ul class="filter-list">
           <li>
             <input type="checkbox" name="pool" id="pool" class="visually-hidden filter-input filter-input-checkbox" checked>
             <label for="pool">Бассейн</label>
@@ -43,11 +48,13 @@
             <label for="wifi">Wi-fi</label>
           </li>
         </ul>
-        </fieldset>
+      </fieldset>
       
-        <fieldset>
+      <!-- Фильтр №2. Тип жилья.  -->
+      
+      <fieldset>
         <legend>Тип жилья:</legend>
-        <ul class="accommodation-filter">
+        <ul class="filter-list">
           <li>
             <input type="checkbox" name="hotel" id="hotel" class="visually-hidden filter-input filter-input-checkbox" checked>
             <label for="hotel">Гостиница</label>
@@ -61,38 +68,43 @@
             <label for="apartments">Апартаменты</label>
           </li>
         </ul>
-        </fieldset>
+      </fieldset>
+       
+      <!-- Фильтр №3. Стоимость.  -->
         
-        <fieldset>
-          <legend>Стоимость в сутки (Р):</legend>
-          <input type="range" min="0" max="5000" name="money1" id="money1">
-        </fieldset>
-        <button type="submit" class="filter-button button">Показать</button>
-      </form>
+      <fieldset>
+        <legend>Стоимость в сутки (Р):</legend>
+        <input type="range" min="0" max="5000" name="money1" id="money1">
+      </fieldset>
+      <button type="submit" class="filter-button button">Показать</button>
+    </form>
    </section>
    
-<!-------------------   Основной блок. Секция результаты. Фильтр результатов  ------------------->    
+<!-- Основной блок. Секция результаты. Фильтр результатов. --> 
 
    <section class="results">
-   
     <div class="results-filter">
-     <form action="#">
+     <form action="https://echo.htmlacademy.ru" method="get" class="filter">
        <fieldset>
          <legend>Найдено: 3</legend>
          <ul>
            <li class="filter-option">
              <input type="radio" name="hotel-properties" value="price" id="price" class="visually-hidden filter-input filter-input-radio">
              <label for="price">По цене</label>
-            </li>
-                 
+           </li>   
            <li class="filter-option">
              <input type="radio" name="hotel-properties" value="type" id="type" class="visually-hidden filter-input filter-input-radio" checked>
              <label for="type">По типу</label>
-           </li>
-                 
+           </li>   
            <li class="filter-option">
              <input type="radio" name="hotel-properties" value="rating" id="rating" class="visually-hidden filter-input filter-input-radio">
              <label for="rating">По рейтингу</label>
+           </li>
+           <li class="filter-option">
+             <input type="radio" name="hotel-order" value="ascending" id="ascending" class="visually-hidden filter-input filter-input-radio arrow">
+             <label for="ascending">По возрастанию</label>
+             <input type="radio" name="hotel-order" value="waning" id="waning" class="visually-hidden filter-input filter-input-radio arrow">
+             <label for="waning">По возрастанию</label>
            </li>
          </ul>
        </fieldset>
@@ -102,8 +114,10 @@
 <!-------------------   Основной блок. Секция результаты. Список отелей  ------------------->   
       
     <div class="results-hotels">
-      <ul class="hotel-list">
      
+      <!-- Список найденных отелей. Т.к все элементы списка многосоставные, после каждого закрывающего элемента </li> оставил пустую строку для простоты восприятия. -->
+      
+      <ul class="hotel-list">
         <li class="hotel-item">
           <h3>Amara Resort & Spa</h3>
           <p class="catalog-item-image">
@@ -147,28 +161,32 @@
             <a class="button" href="#">Забранировать</a>
           </p>
           <p class="rating">Рейтинг: 9,2</p>
-        </li>      
-       </ul>
-     </div>
+        </li> 
+             
+      </ul>
+    </div>
    </section>
   </main>
   
-<!-------------------   Подвал сайта -------------------> 
-    
-  <footer class="main-footer">
-    <p>#visitsedona</p>
-      <div class="social">
-        <ul>
+  <!-- Подвал сайта. Навигация. --> 
+ 
+  <footer class="main-footer container">
+    <section class="footer-row">
+      <div class="visit">
+        <p>#visitsedona</p>
+      </div>
+      <div class="footer-social">
+        <ul class="social-list">
           <li><a class="social-button" href="#">Вконтакте</a></li>
           <li><a class="social-button" href="#">Фейсбук</a></li>
           <li><a class="social-button" href="#">Инстаграм</a></li>
         </ul>
       </div>
-        
       <div class="footer-logo">
-        <p>websyte by <a href="#"></a><img src="http://placehold.it/115x41" alt="Logo Sedona"> </p>
+        <p>websyte by</p>
+        <a href="#"><img src="http://placehold.it/115x41" alt="HTML academy"></a>
       </div>
-  </footer>  
-  
+    </section>
+  </footer>    
 </body>
 </html>
