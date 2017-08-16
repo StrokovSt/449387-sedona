@@ -41,13 +41,13 @@
 <!-- Основной блок. Список приемуществ. Секция №1. -->
       
       <section class="features-section">
-        <div class="feature-image">
-          <img src="http://placehold.it/800x255" alt="panorama" class="panorama">
-        </div>
         <div class="feature-description important">
-          <h3>Настоящий городок</h3>
+          <h2>Настоящий городок</h2>
           <b>— №1 —</b>
           <p>Седона - не атракцион для туристов, там течет своя жизнь</p>
+        </div>
+        <div class="feature-image">
+          <img src="http://placehold.it/800x255" alt="panorama" class="panorama">
         </div>
       </section>
       
@@ -55,15 +55,15 @@
       
       <section class="features-section">
         <div class="feature-item">
-          <h3>Жильё</h3>
+          <h2>Жильё</h2>
           <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
         </div>
         <div class="feature-item">
-          <h3>Еда</h3>
+          <h2>Еда</h2>
           <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
         </div>
         <div class="feature-item">
-          <h3>Сувениры</h3>
+          <h2>Сувениры</h2>
           <p>Не только китайского, но и местного производства!</p>
         </div>
       </section>
@@ -71,13 +71,13 @@
 <!-- Основной блок. Список приемуществ. Секция №3. -->
         
       <section class="features-section">
-        <div class="feature-image">
-          <img src="http://placehold.it/800x255" alt="panorama" class="panorama">
-        </div>
         <div class="feature-description important">
-          <h3>Там есть мост Дьявола</h3>
+          <h2>Там есть мост Дьявола</h2>
           <b>— №2 —</b>
           <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+        </div>
+        <div class="feature-image">
+          <img src="http://placehold.it/800x255" alt="panorama" class="panorama">
         </div>
       </section>
       
@@ -85,17 +85,17 @@
       
       <section class="features-section">
         <div class="feature-description">
-          <h3>Небольшая площадь</h3>
+          <h2>Небольшая площадь</h2>
           <b>— №3 —</b>
           <p>Все достопримечательности находятся очень близко</p>
         </div>
         <div class="feature-description">
-          <h3>Красивая дорога</h3>
+          <h2>Красивая дорога</h2>
           <b>— №4 —</b>
           <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
         </div>
         <div class="feature-description">
-          <h3>Мало туристов</h3>
+          <h2>Мало туристов</h2>
           <b>— №5 —</b>
           <p>Большинство едет в гранд каньон и толпится там</p>
         </div>
@@ -126,17 +126,21 @@
           <!-- Блок №3. Количество регестрируемых. -->
           
           <div class="search-item">
-            <div class="search-branch">
-              <button class="branch-button" type="button">-</button>
-              <label for="adults">Взрослые</label>
-              <input type="text" name="adults" id="adults" min="0" max="666" placeholder="2" required>
-              <button class="branch-button" type="button">+</button>
+            <div class="search-section">
+            <label for="adults">Взрослые</label>
+              <div class="search-branch">
+                <button class="branch-button" type="button">-</button>
+                <input type="text" name="adults" id="adults" min="0" max="666" placeholder="2" required>
+                <button class="branch-button" type="button">+</button>
+              </div>
             </div>
-            <div class="search-branch">
-              <button class="branch-button" type="button">-</button>
-              <label for="children">Дети</label>
-              <input type="text" name="children" id="children" min="0" max="666" placeholder="0" required>
-              <button class="branch-button" type="button">+</button>
+            <div class="search-section">
+            <label for="children">Дети</label>
+              <div class="search-branch">
+                <button class="branch-button" type="button">-</button>
+                <input type="text" name="children" id="children" min="0" max="666" placeholder="0" required>
+                <button class="branch-button" type="button">+</button>
+              </div>
             </div>
           </div>
           <button class="item-button" type="submit">Найти</button>
@@ -154,7 +158,9 @@
 <!-- Подвал сайта. Навигация. --> 
   
     <footer class="main-footer">
-      #visitsedona
+      <div class="footer-visit">
+        #visitsedona
+      </div>
       <div class="footer-social">
         <ul class="social-list">
           <li class="social-item"><a class="social-button" href="#">Вконтакте</a></li>
