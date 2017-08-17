@@ -1,0 +1,25 @@
+body {
+  font-size: 18px;
+  line-height: 21px;
+  color: black;
+  font-weight: normal;
+  font-family: "PT Sans", serif;
+}
+
+h2 {
+  font-size: 21px;
+  line-height: 21px;
+  text-transform: uppercase;
+}
+
+.features-text h2 {
+  line-height: 26px;
+}
+
+.hotels h2 {
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+}
+
+
