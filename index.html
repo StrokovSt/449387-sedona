@@ -32,14 +32,14 @@
             <img src="img/greeting-inscription.png" alt="Welcome to Sedona">
           </div>
         </section> 
-        
+      </div>
   <!-- Основной блок. Приемущества.-->
        
         <section class="features-text">
           <h2>Седона — небольшой городок в Аризоне,  заслуживающий большего!</h2>
           <p>Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!</p>
         </section>
-    </div>
+    
   
 <!-- Основной блок. Список приемуществ. Секция №1. -->
      
@@ -50,9 +50,7 @@
           <p>— №1 —</p>
           <p>Седона - не атракцион для туристов, там течет своя жизнь</p>
         </div>
-        <div class="feature-image">
-          <img src="img/feature-1.jpg" width="800px" height="255px" alt="panorama" class="panorama">
-        </div>
+        <div class="feature-image"></div>
       </section>
       
 <!-- Основной блок. Список приемуществ. Секция №2. -->
@@ -80,9 +78,7 @@
           <p>— №2 —</p>
           <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
         </div>
-        <div class="feature-image">
-          <img src="img/feature-2.jpg" width="800px" height="255px" alt="panorama" class="panorama">
-        </div>
+        <div class="feature-image"></div>
       </section>
       
 <!-- Основной блок. Список приемуществ. Секция №4. -->
@@ -117,14 +113,14 @@
          
           <div class="search-item">
             <label for="arrival-date">Дата заезда</label>
-            <input type="text" name="arrival-date" id="arrival-date" placeholder="24 апреля 2017" required>
+            <input class="arrival-date" type="text" name="arrival-date" id="arrival-date" placeholder="24 апреля 2017" required>
           </div>
           
           <!-- Блок №2. Дата выезда. -->
           
           <div class="search-item">
             <label for="date-of-departure">Дата выезда</label>
-            <input type="text" name="date-of-departure" id="date-of-departure" placeholder="4 июля 2017" required>
+            <input class="date-of-departure" type="text" name="date-of-departure" id="date-of-departure" placeholder="4 июля 2017" required>
           </div>
           
           <!-- Блок №3. Количество регестрируемых. -->
@@ -134,7 +130,7 @@
             <label for="adults-number">Взрослые</label>
               <div class="search-branch">
                 <button class="branch-button" type="button">-</button>
-                <input type="text" name="adults-number" id="adults-number" min="0" max="666" placeholder="2" required>
+                <input class="adults-number" type="text" name="adults-number" id="adults-number" min="0" max="666" placeholder="2" required>
                 <button class="branch-button" type="button">+</button>
               </div>
             </div>
@@ -142,7 +138,7 @@
             <label for="children-number">Дети</label>
               <div class="search-branch">
                 <button class="branch-button" type="button">-</button>
-                <input type="text" name="children-number" id="children-number" min="0" max="666" placeholder="0" required>
+                <input class="adults-number" type="text" name="children-number" id="children-number" min="0" max="666" placeholder="0" required>
                 <button class="branch-button" type="button">+</button>
               </div>
             </div>
