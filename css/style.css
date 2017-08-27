@@ -1,6 +1,6 @@
 body {
-  margin: 0px;
   padding: 0;
+  margin: 0px;
   
   font-family: "PT Sans", sans-serif;
   font-size: 14px;
@@ -16,7 +16,12 @@ a {
   text-decoration: none;
 } 
 
+p {
+  margin: 0;
+}
+
 .container {
+  min-width: 768px;
   width: 1200px;
   margin: 0 auto;
   
@@ -32,6 +37,7 @@ a {
   
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Хэдер. Навигация. */
@@ -43,8 +49,36 @@ a {
   background-color: #ffffff;
 }
 
+.header-logo {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  
+  transform: translate(-50%);
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 6%;
+  margin: 0;
+}
+
+.navigation-list li:nth-child(1),
+.navigation-list li:nth-child(2) {
+  text-align: left;
+}
+
+.navigation-list li:nth-child(3),
+.navigation-list li:nth-child(4) {
+  text-align: right;
+}
+
 .navigation-item {
-  display: inline-block;
+  list-style: none;
+  flex-basis: 20%;
+  
+  padding: 16px 0;
 }
 
 .navigation-item a {
@@ -73,7 +107,7 @@ a {
 /* Приветствие. Текст картинкой. */
 
 .attraction-tagline {
-  margin-top: 0px;
+  margin-top: 75px;
   
   text-align: center;
 }
@@ -81,17 +115,19 @@ a {
 /* Особенности. */
 
 .features-text {
+  padding-top: 62px;
+  padding-bottom: 44px;
   margin: 0 auto;
-  margin-top: 60px;
   
   text-align: center;
-  width: 450px;
+  width: 525px;
   
   background-color: #ffffff;
 }
 
 .features-text h2 {
   margin: 0px;
+  margin-bottom: 31px;
   
   font-size: 21px;
   line-height: 26px;
@@ -103,42 +139,39 @@ a {
   line-height: 26px;
 }
 
-.attraction::before {
+.attraction::before { /* Не растягивается и не сжимается. Почему? */
   position: absolute;
   bottom: 0px;
   
   display: block;
-  width: 1200px;
+  width: 100%;
   height: 57px;
   content: "";
   
   background-image: url("../img/mask.png");
   background-repeat: no-repeat;
+  background-size: cover;
 }
 
 /* Список приемуществ. */
 
+.features-section {
+  display: flex;
+}
+
 .feature-description {
+  padding-top: 50px;
+  padding-bottom: 56px;
+  
+  flex-basis: 33.333333%;
   text-align: center;
   color: #333333;
   
   background-color: #eeeeee;
 }
 
-.important {
-  width: 400px;
-  padding-top: 25px;
-  padding-bottom: 32px;
-  
-  text-align: center;
-  color: #ffffff;
-  
-  background-color: #81b3d2;
-}
-
 .important h2 {
   margin: 0 auto;
-  margin-bottom: 25px;
   width: 165px;
   
   font-size: 21px;
@@ -146,13 +179,21 @@ a {
   font-weight: bold;
 }
 
-.important p {
-  margin-bottom: 32px;
+.feature-description p {
+  margin-top: 22px;
 }
 
+.important {
+  flex-basis: 33.333333%;
+  
+  text-align: center;
+  color: #ffffff;
+  
+  background-color: #81b3d2;
+}
 
 .feature-image {
-  width: 800px;
+  flex-basis: 66.666666%;
   height: 256px;
   overflow: hidden;
   
@@ -161,14 +202,17 @@ a {
   background-position: center;
 }
 
-.feature-image:last-child {
+.feature-2 {
+  order: -1;
   background-image: url(../img/feature-2.jpg);
 }
 
 .feature-item {
   position: relative;
   
-  width: 400px;
+  flex-basis: 33.333333%;
+  padding-top: 56px;
+  padding-bottom: 50px;
   
   text-align: center;
 }
@@ -178,6 +222,7 @@ a {
   width: 76px;
   height: 76px;
   content: "";
+  margin: 0 auto;
   
   background-image: url("../img/svg-sedona/icon-1.svg");
   background-repeat: no-repeat;
@@ -193,6 +238,9 @@ a {
 }
 
 .feature-item h2 {
+  margin-top: 33px;
+  margin-bottom: 28px;
+  
   font-size: 21px;
   line-height: 21px;
   font-weight: bold;
@@ -203,11 +251,15 @@ a {
 
 .hotel-search {
   text-align: center;
+  padding-top: 55px;
   
   background-color: #ffffff;
 }
 
 .hotel-search h2{
+  margin: 0;
+  margin-bottom: 30px;
+  
   font-size: 36px;
   line-height: 36px;
   font-weight: bold;
@@ -217,10 +269,9 @@ a {
 .search-button {
   display: block;
   width: 568px;
-  margin: 0 auto;
   padding: 35px 0px;
-  margin-bottom: 55px;
-  margin-top: 52px;
+  margin: 0 auto;
+  margin-top: 50px;
   
   font-size: 21px;
   line-height: 26px;
@@ -242,6 +293,17 @@ a {
 
 /* Стилизация всплывающего окна. */
 
+.search-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 35px;
+}
+
+
+
+/* Дата приезда/выезда. */
+
 .search-item label {
   font-size: 14px;
   line-height: 26px;
@@ -249,14 +311,14 @@ a {
   color: #000000;
 }
 
-/* Дата приезда/выезда. */
+.date-label {
+  margin-right: 22px;
+}
 
 .arrival-date,
 .date-of-departure {
-  box-sizing: border-box;
-  width: 346px;
   padding: 14px 12px;
-  margin-left: 20px;
+  flex-basis: 100%;
   
   font-size: 14px;
   line-height: 26px;
@@ -265,15 +327,37 @@ a {
   
   background-color: #f2f2f2;
   border: none;
-} /* Несмотря на то, что инпуты задаются одним правилом, один чуть чуть сьезжает относительно другого. Непонятно почему. */
+}
 
 /* Количество регестрируемых. */
+
+.search-form {
+  box-sizing: border-box;
+  width: 568px;
+  padding: 55px;
+  margin: 0 auto;
+  background-color: azure;
+}
+
+.number {
+  justify-content: flex-start;
+}
+
+.search-section {
+  display: flex;
+  align-items:center;
+  margin-right: 48px;
+}
+
+.search-branch {
+  display: flex;
+  margin-left: 36px;
+}
 
 .adults-number {
   box-sizing: border-box;
   width: 38px;
   height: 38px;
-  margin: -4px;
   
   font-size: 14px;
   line-height: 26px;
@@ -332,7 +416,7 @@ a {
 .item-button {
   width: 458px;
   padding: 17px;
-  margin-top: 55px;
+  margin-top: 20px;
   
   font-size: 21px;
   line-height: 26px;
@@ -356,6 +440,13 @@ a {
 
 /* Подвал. */
 
+.main-footer {
+  display: flex;
+  padding: 0 6%;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .footer-visit {
   font-size: 21px;
   line-height: 26px;
@@ -365,17 +456,20 @@ a {
 
 /* Социальные сети. */
 
+.social-list {
+  display: flex;
+  background-color: bisque;
+}
+
 .social-item {
-  display: inline-block;
+  display: flex;
+  align-items: center;
+  flex-basis: 0%;
 }
 
 .social-item a{
-  display: block;
-
   width: 46px;
   height: 48px;
-  
-  text-align: center;
   
   background-color: #81b3d2;
 }
@@ -400,14 +494,17 @@ a {
 /* HTML academy. */
 
 .footer-logo {
+  display: flex;
+  
   line-height: 26px;
   color: #000000;
 }
 
-.footer-logo a {
+.footer-logo a { 
   display: block;
   width: 115px;
   height: 41px;
+  margin-left: 8px;
 }
 
 .footer-logo a:hover .footer-link-image path,

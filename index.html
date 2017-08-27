@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+ <body>
   <div class="container">
   
 <!-- Шапка сайта. Навигация. -->
@@ -21,8 +21,8 @@
             <li class="navigation-item"><a href="#">Карта штата</a></li>
             <li class="navigation-item"><a href="hotels.html">Гостиницы</a></li>
           </ul>
-          <a class="header-logo"><img src="img/logo-sedona.png" width="138px" height="70px" alt="Logo Sedona"></a>
         </nav>
+        <a class="header-logo"><img src="img/logo-sedona.png" width="138px" height="70px" alt="Logo Sedona"></a>
       </header>
       
   <!-- Основной блок. Приветствие. -->
@@ -48,7 +48,7 @@
         <div class="feature-description important">
           <h2>Настоящий городок</h2>
           <p>— №1 —</p>
-          <p>Седона - не атракцион для туристов, там течет своя жизнь</p>
+          <p>Седона - не атракцион для туристов, <br>там течет своя жизнь</p>
         </div>
         <div class="feature-image"></div>
       </section>
@@ -58,15 +58,15 @@
       <section class="features-section">
         <div class="feature-item">
           <h2>Жильё</h2>
-          <p>Рекомендуем пожить в настоящем мотеле, все как в кино!</p>
+          <p>Рекомендуем пожить в настоящем <br>мотеле, все как в кино!</p>
         </div>
         <div class="feature-item">
           <h2>Еда</h2>
-          <p>Всегда заказывайте фирменный бургер, вы не разочаруетесь!</p>
+          <p>Всегда заказывайте фирменный бургер, <br>вы не разочаруетесь!</p>
         </div>
         <div class="feature-item">
           <h2>Сувениры</h2>
-          <p>Не только китайского, но и местного производства!</p>
+          <p>Не только китайского, но и местного <br>производства!</p>
         </div>
       </section>
         
@@ -76,9 +76,9 @@
         <div class="feature-description important">
           <h2>Там есть мост Дьявола</h2>
           <p>— №2 —</p>
-          <p>Да, по нему можно пройти! Если конечно вы осмелитесь</p>
+          <p>Да, по нему можно пройти! Если конечно <br>вы осмелитесь</p>
         </div>
-        <div class="feature-image"></div>
+        <div class="feature-image feature-2"></div>
       </section>
       
 <!-- Основной блок. Список приемуществ. Секция №4. -->
@@ -87,17 +87,17 @@
         <div class="feature-description">
           <h2>Небольшая площадь</h2>
           <p>— №3 —</p>
-          <p>Все достопримечательности находятся очень близко</p>
+          <p>Все достопримечательности <br>находятся очень близко</p>
         </div>
         <div class="feature-description">
           <h2>Красивая дорога</h2>
           <p>— №4 —</p>
-          <p>Ехать в Седону из Лас-Вегаса совсем не скучно!</p>
+          <p>Ехать в Седону из Лас-Вегаса совсем <br>не скучно!</p>
         </div>
         <div class="feature-description">
           <h2>Мало туристов</h2>
           <p>— №5 —</p>
-          <p>Большинство едет в гранд каньон и толпится там</p>
+          <p>Большинство едет в гранд каньон и <br>толпится там</p>
         </div>
       </section>
       
@@ -105,29 +105,29 @@
      
       <section class="hotel-search">
         <h2>Заинтересовались?</h2>
-        <p>Укажите предполагаемые даты поездки, и мы покажем вам лучшие предложения гостиниц в седоне</p>
+        <p>Укажите предполагаемые даты поездки, <br>и мы покажем вам лучшие предложения гостиниц в седоне</p>
         <a class="button search-button" href="#">Поиск гостиницы в Седоне</a>
         <form action="https://echo.htmlacademy.ru" method="post" class="search-form">
         
         <!-- Блок №1. Дата заезда. -->
          
           <div class="search-item">
-            <label for="arrival-date">Дата заезда</label>
+            <label class="date-label" for="arrival-date">Дата заезда:</label>
             <input class="arrival-date" type="text" name="arrival-date" id="arrival-date" placeholder="24 апреля 2017" required>
           </div>
           
           <!-- Блок №2. Дата выезда. -->
           
           <div class="search-item">
-            <label for="date-of-departure">Дата выезда</label>
+            <label class="date-label" for="date-of-departure">Дата выезда:</label>
             <input class="date-of-departure" type="text" name="date-of-departure" id="date-of-departure" placeholder="4 июля 2017" required>
           </div>
           
           <!-- Блок №3. Количество регестрируемых. -->
           
-          <div class="search-item">
+          <div class="search-item number">
             <div class="search-section">
-            <label for="adults-number">Взрослые</label>
+            <label for="adults-number">Взрослые:</label>
               <div class="search-branch">
                 <button class="branch-button" type="button">-</button>
                 <input class="adults-number" type="text" name="adults-number" id="adults-number" min="0" max="666" placeholder="2" required>
@@ -135,7 +135,7 @@
               </div>
             </div>
             <div class="search-section">
-            <label for="children-number">Дети</label>
+            <label for="children-number">Дети:</label>
               <div class="search-branch">
                 <button class="branch-button" type="button">-</button>
                 <input class="adults-number" type="text" name="children-number" id="children-number" min="0" max="666" placeholder="0" required>
