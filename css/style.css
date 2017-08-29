@@ -617,7 +617,9 @@ p, h2, h3, ul {
 }
 
 .filter-item label {
+  display: inline-block;
   margin-left: 40px;
+  margin-top: 27px;
 }
 
 /* Контейнер с ползунком. */
@@ -769,13 +771,12 @@ p, h2, h3, ul {
 #hotel:checked ~ label,
 #motel:checked ~ label,
 #apartments:checked ~ label {
-  color: red;  
+  color: red;
 }
 
-#pool:checked ~ filter-input::before {
+#pool:checked+input::before {
   background-image: url("../img/svg-sedona/checkbox-on.svg");
 }
-
 
 /* Фильтр результатов. */
 
