@@ -40,6 +40,7 @@ p, h2, h3, ul {
   margin: 0 auto;
   
   background-color: #ffffff;
+  box-shadow: 0 0 5px 5px #e7e7e7;
 }
 
 /* Оформление главное картинки приветствия. */
@@ -332,7 +333,7 @@ p, h2, h3, ul {
   width: 568px;
   padding: 55px;
   
-  background-color: azure;
+  background-color: #ffffff;
 }
 
 /* Стилизация всплывающего окна. */
@@ -355,6 +356,8 @@ p, h2, h3, ul {
 
 .arrival-date,
 .date-of-departure {
+  position: relative;
+  
   box-sizing: border-box;
   padding: 14px 12px;
   flex-basis: 75%;
@@ -366,6 +369,29 @@ p, h2, h3, ul {
   
   background-color: #f2f2f2;
   border: none;
+}
+
+.date-label-dep::before,
+.date-label-arr::before {
+  position: absolute;
+  content: "";
+  
+  width: 23px;
+  height: 23px;
+  
+  top: 16%;
+  right: 11%;
+  
+  background-image: url("../img/svg-sedona/calendar.svg");
+  background-repeat: no-repeat;
+  
+  z-index: 10;
+  cursor: pointer;
+}
+
+.date-label-dep::before {
+  top: 36%;
+  right: 11%;
 }
 
 /* Количество регестрируемых. */
@@ -747,15 +773,16 @@ p, h2, h3, ul {
 
 /* Стилизация чекбоксов. */
 
-.filter-input {
+.filter-item label {
   position: relative;
+  cursor: pointer;
 }
 
-.filter-input::before {
+.filter-item label::before {
   content: "";
   position: absolute;
-  top: -18px;
-  left: 0px;
+  top: 0px;
+  left: -40px;
   
   display: block;
   width: 27px;
@@ -765,18 +792,14 @@ p, h2, h3, ul {
   background-repeat: no-repeat;
 }
 
-#pool:checked ~ label,
-#parking:checked ~ label,
-#wifi:checked ~ label,
-#hotel:checked ~ label,
-#motel:checked ~ label,
-#apartments:checked ~ label {
-  color: red;
-}
-
-#pool:checked+input::before {
+input:checked+label::before {
   background-image: url("../img/svg-sedona/checkbox-on.svg");
 }
+
+input:disabled+label::before {
+  filter: brightness(0.6);
+}
+
 
 /* Фильтр результатов. */
 
