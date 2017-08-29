@@ -24,10 +24,14 @@ p, h2, h3, ul {
   list-style: none;
 }
 
-.visual-hidden {
-  padding: 0;
-  margin: 0;
-  visibility: visible;
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  …
 }
 
 .container {
@@ -73,6 +77,7 @@ p, h2, h3, ul {
 
 .navigation-list {
   display: flex;
+  flex-wrap: wrap;
   padding: 0 6%;
   margin: 0;
   justify-content: space-between;
@@ -112,7 +117,7 @@ p, h2, h3, ul {
   opacity: 0.3;
 }
 
-.navigation-item.opened a {
+.opened a {
   color: #766357;
 }
 
@@ -503,22 +508,22 @@ p, h2, h3, ul {
 
 .social-list {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   padding: 0;
   margin: 0;
 }
 
 .social-item {
-  display: flex;
   padding: 0 3px;
 }
 
-.social-item a{
+.social-button {
   display: flex;
-  width: 46px;
-  height: 48px;
   justify-content: center;
   align-items: center;
+  width: 46px;
+  height: 48px;
   
   background-color: #81b3d2;
 }
@@ -574,6 +579,12 @@ p, h2, h3, ul {
   background-repeat: no-repeat;
 }
 
+.filter-list,
+.result-list,
+.hotel-list {
+  list-style: none;
+}
+
 /* Список фильтров */
 
 .filters form {
@@ -588,28 +599,9 @@ p, h2, h3, ul {
 .filter-section,
 .result-section {
   border: none;
+  margin: 0;
+  padding: 0;
 }
-
-.cost-section {
-  display: flex;
-}
-
-.cost-slider {
-  display: flex;
-  align-items: center;
-}
-
-.circle {
-  border: 20px solid black;
-  border-radius: 50%;
-}
-
-.cost-row {
-  width: 100%;
-  border-bottom: 2px solid black;
-}
-
-/* Стилизация фильтров. */
 
 .filter-section legend {
   font-size: 16px;
@@ -618,16 +610,149 @@ p, h2, h3, ul {
   color: #ffffff;
 }
 
-.filter-input {
-  position: relative;
-  
-  margin-bottom: 26px;
-  margin-top: 24px;
+.filter-section label {
+  font-size: 14px;
+  line-height: 21px;
+  color: #ffffff;
 }
 
-.filter-input:before {
+.filter-item label {
+  margin-left: 40px;
+}
+
+/* Контейнер с ползунком. */
+
+.price-controls {
+  position: relative;
+  
+  display: flex;
+  align-items: center;
+  height: 32px;
+  margin-top: 10px;
+  
+  font-size: 0;
+  
+  border: 2px solid white;
+  border-radius: 2px;
+}
+
+.price-controls::after {
   content: "";
   position: absolute;
+  left: 50%;
+  
+  width: 2px;
+  height: 22px;
+  
+  background: #ffffff;
+}
+
+.price-controls label {
+  flex-basis: 50%;
+  padding-left: 20%;
+  
+  font-size: 14px;
+  vertical-align: top;
+  
+  cursor: pointer;
+}
+
+.price-controls input {
+  width: 50px;
+  margin: 0;
+  
+  color: inherit;
+  font: inherit;
+  
+  background: inherit;
+  border: none;
+  outline: none;
+}
+
+/* Сами ползунок. */
+
+.range-controls {
+  position: relative;
+  
+  margin-bottom: 32px;
+}
+
+.scale {
+  margin-top: 20px;
+  height: 2px;
+  
+  background: rgba(255,255,255,0.3  );
+}
+
+.bar {
+  width: 80%;
+  height: 2px;
+  
+  background-color: #ffffff;
+}
+
+.range-toggle {
+  position: absolute;
+  top: -11px;
+  width: 4px;
+  height: 4px;
+  
+  background: #ababab;
+  border: 11px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px rgba(0, 1, 1, 0.2);
+  cursor: pointer;
+}
+
+.range-toggle-min {
+  left: 0;
+}
+
+.range-toggle-max {
+  left: 80%;
+}
+
+.range-toggle:hover {
+  top: -12px;
+  
+  width: 6px;
+  height: 6px;
+  
+  border: 12px solid #ffffff;
+}
+
+/* Кнопка. */
+
+.filter-button {
+  display: block;
+  padding: 6px 35px;
+  margin: 0 auto;
+  
+  color: #ffffff;
+  text-align: center;
+  
+  background: transparent;
+  border: 2px solid #ffffff;
+  border-radius: 2px;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter-button:hover {
+  background: rgba(255, 255, 255, 1);
+  color: #000000;
+}
+
+/* Стилизация чекбоксов. */
+
+.filter-input {
+  position: relative;
+}
+
+.filter-input::before {
+  content: "";
+  position: absolute;
+  top: -18px;
   left: 0px;
   
   display: block;
@@ -638,50 +763,33 @@ p, h2, h3, ul {
   background-repeat: no-repeat;
 }
 
-.filter-section label {
-  font-size: 14px;
-  line-height: 21px;
-  color: #ffffff;
+#pool:checked ~ label,
+#parking:checked ~ label,
+#wifi:checked ~ label,
+#hotel:checked ~ label,
+#motel:checked ~ label,
+#apartments:checked ~ label {
+  color: red;  
 }
 
-.filter-list,
-.result-list,
-.hotel-list {
-  list-style: none;
+#pool:checked ~ filter-input::before {
+  background-image: url("../img/svg-sedona/checkbox-on.svg");
 }
 
-/* Кнопка "Показать". */
-
-.filter-button {
-  width: 133px;
-  height: 32px;
-  
-  color: #ffffff;
-  text-align: center;
-  
-  background: rgba(255, 255, 255, 0);
-  border: 2px solid #ffffff;
-}
-
-.filter-button:hover {
-  background: rgba(255, 255, 255, 1);
-  color: #000000;
-}
 
 /* Фильтр результатов. */
 
-.results-filter form {
+.result-form {
   display: flex;
+  align-items: stretch;
   padding: 28px 6%;
-  align-items: center;
-  justify-content: flex-start;
   
   background-color: #ffffff;
   border-bottom: 2px solid #f6f6f6;
 }
 
 .results-filter legend {
-  flex-basis: 13%;
+  width: 135px;
   margin-right: 30px;
   
   font-size: 21px;
@@ -691,16 +799,17 @@ p, h2, h3, ul {
 
 .result-list {
   display: flex;
-  margin-left: 0px;
-  flex-basis: 32%;
+  width: 370px;
   justify-content: space-between;
   align-items: center;
+  margin-left: 0px;
 }
 
 .result-list-star {
   display: flex;
-  flex-basis: 55%;
   justify-content: flex-end;
+  align-self: center;
+  margin-left: auto;
 }
 
 /* Стилизация сортировки. */
@@ -749,42 +858,41 @@ p, h2, h3, ul {
 
 .hotel-item {
   display: flex;
+  flex-wrap: wrap;
   flex-basis: 100%;
-  align-items: center;
-  justify-content: space-between;
   padding: 30px 6%;
   
   border-bottom: 2px solid #f6f6f6;
 }
 
-.hotel-item > div {
-  box-sizing: border-box;
-  height: 90px;
-}
-
 /* Фотокарточка. */
   
 .hotel-image {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: auto;
   margin-right: 30px;
 }
+
 
 /* Описание. */
 
 .hotel-description {
-  flex-basis: 80%;
 }
 
 .description-section {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .description-branch {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
 }
 
 .description-branch b {
-  margin-bottom: 9px;
+  margin-bottom: 14px;
 }
 
 .description-branch:nth-child(2) {
@@ -794,14 +902,15 @@ p, h2, h3, ul {
 /* Рейтинг. */
 
 .hotel-rating {
-  flex-basis: 15%;
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
 }
 
 .rating-branch:last-child {
-  align-self: flex-end;
+  margin-top: auto;
 }
 
 /* Стили карточек */
@@ -831,7 +940,7 @@ p, h2, h3, ul {
 /* Карточки отелей. Кнопки. */
 
 .description-branch a {
-  box-sizing: border-box;
+  display: inline-block;
   width: 110px;
   padding: 4px 0px;
   
@@ -892,33 +1001,35 @@ p, h2, h3, ul {
 
 /* Стрелочки */
 
-.arrow-up-star a,
-.arrow-down-star a {
+.arrow {
   display: block;
-  margin-left: 12px;
-  
-  border: 15px solid red;
-  border-bottom-color: #cacaca;
-  border-right-color: transparent;
-  border-left-color: transparent;
-  border-top-width: 0;
+  border: 15px solid #0074d9;
   border-right-width: 8px;
   border-left-width: 8px;
+  border-color: #cacaca;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  border-bottom-width: 0;
 }
 
-.arrow-down-star a {
+.arrow-up {
   transform: rotate(180deg);
+  margin-right: 12px;
 }
 
-.arrow-up-star a:hover,
-.arrow-up-star a:focus,
-.arrow-down-star a:hover,
-.arrow-down-star a:focus {
-  border-bottom-color: #231f20;
+.arrow-down.checked {
+  border-top-color: #81b3d2;
+}
+
+.arrow-up:hover,
+.arrow-up:focus,
+.arrow-down:hover,
+.arrow-down:focus {
+  border-top-color: #231f20;
   outline: none;
 }
 
-.arrow-up-star a:active,
-.arrow-down-star a:active {
-  border-bottom-color: #81b3d2;
+.arrow-up:active,
+.arrow-down:active {
+  border-top-color: #81b3d2;
 }
