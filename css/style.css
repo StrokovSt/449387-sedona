@@ -16,7 +16,7 @@ body {
 
 a {
   text-decoration: none;
-} 
+}
 
 p, h2, h3, ul {
   margin: 0;
@@ -24,19 +24,18 @@ p, h2, h3, ul {
   list-style: none;
 }
 
-
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
   width: 1px;
   height: 1px;
   margin: -1px;
-  …
 }
 
 .container {
   position: relative;
-  width: 1200px;
+  
+  max-width: 1200px;
   margin: 0 auto;
   
   background-color: #ffffff;
@@ -48,16 +47,22 @@ p, h2, h3, ul {
 .attraction {
   position: relative;
   
-  padding-top: 75px;
-  padding-bottom: 80px;
+  height: 508px;
   
   text-align: center;
   
   background-image: url("../img/background.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: 50% 22%;
+  background-position: 50% 21%;
 }
+
+.attraction-tagline {
+  width: 505px;
+  height: 400px;
+  margin-top: 67px;
+}
+
 
 /* Хэдер. Навигация. */
 
@@ -70,7 +75,6 @@ p, h2, h3, ul {
   position: absolute;
   top: 0;
   left: 50%;
-  
   z-index: 1;
   
   transform: translate(-50%);
@@ -78,10 +82,8 @@ p, h2, h3, ul {
 
 .navigation-list {
   display: flex;
-  flex-wrap: wrap;
-  padding: 0 6%;
-  margin: 0;
   justify-content: space-between;
+  padding: 0 6%;
 }
 
   .navigation-list li:nth-child(1),
@@ -95,9 +97,7 @@ p, h2, h3, ul {
 }
 
 .navigation-item {
-  list-style: none;
   flex-basis: 20%;
-  
   padding: 16px 0;
 }
 
@@ -118,7 +118,7 @@ p, h2, h3, ul {
   opacity: 0.3;
 }
 
-.opened a {
+li.navigation-item.opened a {
   color: #766357;
 }
 
@@ -135,10 +135,9 @@ p, h2, h3, ul {
 }
 
 .features-text h2 {
+  width: 525px;
   margin: 0 auto;
   margin-bottom: 31px;
-  
-  width: 525px;
   
   font-size: 21px;
   line-height: 26px;
@@ -163,7 +162,7 @@ p, h2, h3, ul {
   
   background-image: url("../img/mask.png");
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 100% 100%;
   background-position: center;
 }
 
@@ -176,14 +175,9 @@ p, h2, h3, ul {
 /* Номерные карточки. */
 
 .feature-description {
-  box-sizing: border-box;
   flex-basis: 33.333333%;
-  height: 256px;
-  
-  padding: 0 5%;
   padding-top: 50px;
-  padding-bottom: 56px;
-  
+  padding-bottom: 56px; /* Следует убрать + разобраться с серыми карточками. */
   
   text-align: center;
   color: #333333;
@@ -196,18 +190,20 @@ p, h2, h3, ul {
   margin: 0 auto;
   
   font-size: 21px;
-  line-height: 21px;
   font-weight: bold;
 }
 
 .feature-description p {
+  width: 70%;
+  margin: 0 auto;
   margin-top: 22px;
 }
 
+.little-description p {
+  width: 80%;
+}
+
 .important {
-  flex-basis: 33.333333%;
-  
-  text-align: center;
   color: #ffffff;
   
   background-color: #81b3d2;
@@ -218,15 +214,18 @@ p, h2, h3, ul {
 .feature-image {
   flex-basis: 66.666666%;
   height: 256px;
+  
   overflow: hidden;
   
   background-image: url(../img/feature-1.jpg);
   background-repeat: no-repeat;
   background-position: center;
+  background-size: cover;
 }
 
 .feature-2 {
   order: -1;
+  
   background-image: url(../img/feature-2.jpg);
 }
 
@@ -236,7 +235,6 @@ p, h2, h3, ul {
   position: relative;
   
   flex-basis: 33.333333%;
-  padding: 0 6%;
   padding-top: 56px;
   padding-bottom: 50px;
   
@@ -248,17 +246,22 @@ p, h2, h3, ul {
   margin-bottom: 28px;
   
   font-size: 21px;
-  line-height: 21px;
   font-weight: bold;
   color: #000000;
+}
+
+.feature-item p {
+  width: 72%;
+  margin: 0 auto;
 }
 
 .feature-item::before {
   display: block;
   width: 76px;
   height: 76px;
-  content: "";
   margin: 0 auto;
+  
+  content: "";
   
   background-image: url("../img/svg-sedona/icon-1.svg");
   background-repeat: no-repeat;
@@ -279,14 +282,14 @@ p, h2, h3, ul {
 .hotel-search {
   position: relative;
   
-  text-align: center;
   padding-top: 55px;
+  
+  text-align: center;
   
   background-color: #ffffff;
 }
 
 .hotel-search h2{
-  margin: 0;
   margin-bottom: 30px;
   
   font-size: 36px;
@@ -327,6 +330,7 @@ p, h2, h3, ul {
 .search-form {
   position: absolute;
   left: 50%;
+  z-index: 2;
   transform: translate(-50%);
   
   box-sizing: border-box;
@@ -342,11 +346,11 @@ p, h2, h3, ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
   margin-bottom: 35px;
 }
 
 .search-item label {
-  font-size: 14px;
   line-height: 26px;
   font-weight: bold;
   color: #000000;
@@ -354,15 +358,50 @@ p, h2, h3, ul {
 
 /* Дата приезда/выезда. */
 
+.input-cal {
+  position: relative;
+  
+  width: 346px;
+}
+
+.calendar {
+  position: absolute;
+  top: 50%;
+  right: 5%;
+  z-index: 2;
+  
+  text-align: center;
+  transform: translate(40%, -50%);
+  cursor: pointer;
+  
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.calendar svg {
+  fill: #b3b3b3;
+  
+  outline: none;
+}
+
+.calendar:hover svg,
+.calendar:focus svg {
+  fill: #000000;
+}
+
+.calendar:active path {
+  fill: #a4c9df;
+}
+
 .arrival-date,
 .date-of-departure {
   position: relative;
   
   box-sizing: border-box;
-  padding: 14px 12px;
-  flex-basis: 75%;
+  width: 100%;
+  padding: 8px 10px;
   
-  font-size: 14px;
   line-height: 26px;
   font-weight: bold;
   color: #000000;
@@ -371,41 +410,26 @@ p, h2, h3, ul {
   border: none;
 }
 
-.date-label-dep::before,
-.date-label-arr::before {
-  position: absolute;
-  content: "";
-  
-  width: 23px;
-  height: 23px;
-  
-  top: 16%;
-  right: 11%;
-  
-  background-image: url("../img/svg-sedona/calendar.svg");
-  background-repeat: no-repeat;
-  
-  z-index: 10;
-  cursor: pointer;
-}
-
-.date-label-dep::before {
-  top: 36%;
-  right: 11%;
-}
-
 /* Количество регестрируемых. */
 
 .search-section {
-  box-sizing: border-box;
   display: flex;
-  flex-basis: 50%;
   align-items: center;
-  justify-content: space-between;
+  
+  box-sizing: border-box;
+  flex-basis: 50%;
 }
 
-.search-section:nth-child(2) {
-  padding-left: 14%;
+.search-section:last-child {
+  justify-content: flex-end;
+}
+
+.search-section:first-child label {
+  margin-right: 40px;
+}
+
+.search-section:last-child label {
+  margin-right: 25px;
 }
 
 .search-branch {
@@ -417,7 +441,6 @@ p, h2, h3, ul {
   width: 38px;
   height: 38px;
   
-  font-size: 14px;
   line-height: 26px;
   font-weight: bold;
   color: #000000;
@@ -501,25 +524,39 @@ p, h2, h3, ul {
 /* Карта. */
 
 .map {
+  position: relative;
+  
+  height: 593px;
+  overflow: hidden;
+  
   background-image: url("../img/map.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+  background-position: 50% 90%;
 }
 
 /* Подвал. */
 
+.footer-position {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  
+  background: rgba(255, 255, 255, 0.9);
+}
+
 .main-footer {
   display: flex;
-  padding: 36px 6%;
   justify-content: space-between;
+  
+  padding: 36px 0;
+  
   align-items: center;
 }
 
 .footer-visit {
-  padding-left: 14px;
-  
   flex-basis: 33.333333%;
+  text-align: center;
+  
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
@@ -534,14 +571,12 @@ p, h2, h3, ul {
 
 .social-list {
   display: flex;
-  flex-wrap: wrap;
   justify-content: center;
-  padding: 0;
-  margin: 0;
+  text-align: center;
 }
 
 .social-item {
-  padding: 0 3px;
+  margin-right: 6px;
 }
 
 .social-button {
@@ -567,17 +602,15 @@ p, h2, h3, ul {
   background-color: #5496bd;
 }
 
-.social-button:active  {
-  background-color: #5496bd;
-}
 
 /* HTML academy. */
 
 .footer-logo {
-  flex-basis: 33.333333%;
   display: flex;
   justify-content: center;
-  
+  text-align: center;
+  flex-basis: 33.333333%;
+
   line-height: 26px;
   color: #000000;
 }
@@ -603,6 +636,7 @@ p, h2, h3, ul {
 .hotels-background {
   background-image: url("../img/background-filter.jpg");
   background-repeat: no-repeat;
+  background-position: 50% 20%;
 }
 
 .filter-list,
@@ -614,38 +648,41 @@ p, h2, h3, ul {
 /* Список фильтров */
 
 .filters form {
-  padding: 30px 6%;
   display: flex;
+  padding: 30px 6%;
 }
 
-.filter-section {
-  flex-basis: 33.3333333%;
+.filter-section:nth-child(1) {
+  margin-right: 116px;
+}
+
+.filter-section:nth-child(3) {
+  flex-basis: 35%;
+  margin-left: auto;
 }
 
 .filter-section,
 .result-section {
-  border: none;
   margin: 0;
   padding: 0;
+  
+  border: none;
 }
 
 .filter-section legend {
   font-size: 16px;
-  line-height: 21px;
   font-weight: bold;
   color: #ffffff;
 }
 
 .filter-section label {
-  font-size: 14px;
-  line-height: 21px;
   color: #ffffff;
 }
 
 .filter-item label {
   display: inline-block;
-  margin-left: 40px;
-  margin-top: 27px;
+  padding-left: 40px;
+  margin-top: 26px;
 }
 
 /* Контейнер с ползунком. */
@@ -665,12 +702,12 @@ p, h2, h3, ul {
 }
 
 .price-controls::after {
-  content: "";
   position: absolute;
   left: 50%;
   
   width: 2px;
   height: 22px;
+  content: "";
   
   background: #ffffff;
 }
@@ -722,6 +759,7 @@ p, h2, h3, ul {
 .range-toggle {
   position: absolute;
   top: -11px;
+  
   width: 4px;
   height: 4px;
   
@@ -729,6 +767,7 @@ p, h2, h3, ul {
   border: 11px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 2px 1px rgba(0, 1, 1, 0.2);
+  
   cursor: pointer;
 }
 
@@ -763,27 +802,30 @@ p, h2, h3, ul {
   border: 2px solid #ffffff;
   border-radius: 2px;
   outline: none;
+  
   cursor: pointer;
 }
 
 .filter-button:hover {
-  background: rgba(255, 255, 255, 1);
   color: #000000;
+  
+  background: rgba(255, 255, 255, 1);
 }
 
 /* Стилизация чекбоксов. */
 
 .filter-item label {
   position: relative;
+  
   cursor: pointer;
 }
 
 .filter-item label::before {
-  content: "";
   position: absolute;
-  top: 0px;
-  left: -40px;
+  bottom: -1px;
+  left: 0px;
   
+  content: "";
   display: block;
   width: 27px;
   height: 23px;
@@ -796,7 +838,11 @@ input:checked+label::before {
   background-image: url("../img/svg-sedona/checkbox-on.svg");
 }
 
-input:disabled+label::before {
+input:focus~label {
+  font-weight: bold;
+}
+
+input:disabled~label {
   filter: brightness(0.6);
 }
 
@@ -823,15 +869,14 @@ input:disabled+label::before {
 
 .result-list {
   display: flex;
-  width: 370px;
   justify-content: space-between;
   align-items: center;
+  width: 370px;
   margin-left: 0px;
 }
 
 .result-list-star {
   display: flex;
-  justify-content: flex-end;
   align-self: center;
   margin-left: auto;
 }
@@ -865,7 +910,7 @@ input:disabled+label::before {
   opacity: 1;
 }
 
-.checked a {
+li.result-option.checked a{
   color: #81b3d2;
   
   opacity: 1;
@@ -893,7 +938,6 @@ input:disabled+label::before {
   
 .hotel-image {
   display: flex;
-  flex-wrap: wrap;
   margin-top: auto;
   margin-right: 30px;
 }
@@ -906,12 +950,10 @@ input:disabled+label::before {
 
 .description-section {
   display: flex;
-  flex-wrap: wrap;
 }
 
 .description-branch {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
 }
 
@@ -927,7 +969,6 @@ input:disabled+label::before {
 
 .hotel-rating {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   align-items: flex-end;
   margin-left: auto;
@@ -935,7 +976,19 @@ input:disabled+label::before {
 
 .rating-branch:last-child {
   margin-top: auto;
+  padding: 1px 12px;
+  
+  background-color: #f2f2f2;
 }
+
+.rating-branch:first-child {
+  display: flex;
+}
+
+.rating-branch span {
+  margin-left: 3px;
+}
+
 
 /* Стили карточек */
 
@@ -970,7 +1023,6 @@ input:disabled+label::before {
   
   text-align: center;
   font-weight: bold;
-  font-size: 14px;
   color: #ffffff;
   
   background-color: #81b3d2;
@@ -1017,19 +1069,16 @@ input:disabled+label::before {
 
 /* Рейтинг. Стили. */
 
-.rating-branch:last-child {
-  padding: 1px 12px;
-  
-  background-color: #f2f2f2;
-}
+
 
 /* Стрелочки */
 
 .arrow {
   display: block;
-  border: 15px solid #0074d9;
-  border-right-width: 8px;
-  border-left-width: 8px;
+  
+  border: 12px solid #0074d9;
+  border-right-width: 6px;
+  border-left-width: 6px;
   border-color: #cacaca;
   border-right-color: transparent;
   border-left-color: transparent;
@@ -1041,7 +1090,7 @@ input:disabled+label::before {
   margin-right: 12px;
 }
 
-.arrow-down.checked {
+li .arrow-down.checked {
   border-top-color: #81b3d2;
 }
 
@@ -1056,4 +1105,16 @@ input:disabled+label::before {
 .arrow-up:active,
 .arrow-down:active {
   border-top-color: #81b3d2;
+}
+
+/* Звёздочки */
+
+.stars {
+  display: block;
+  width: 18px;
+  height: 18px;
+  
+  background-image: url("../img/svg-sedona/star.svg");
+  background-position: center;
+  background-repeat: no-repeat;
 }
