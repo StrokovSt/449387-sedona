@@ -24,6 +24,10 @@ p, h2, h3, ul {
   list-style: none;
 }
 
+button {
+  text-transform: uppercase;
+}
+
 .visually-hidden {
   position: absolute;
   clip: rect(0 0 0 0);
@@ -58,9 +62,9 @@ p, h2, h3, ul {
 }
 
 .attraction-tagline {
-  width: 505px;
-  height: 400px;
-  margin-top: 67px;
+  width: 458px;
+  height: 352px;
+  margin-top: 76px;
 }
 
 
@@ -77,28 +81,35 @@ p, h2, h3, ul {
   left: 50%;
   z-index: 1;
   
+  display: block;
+  
   transform: translate(-50%);
 }
 
 .navigation-list {
   display: flex;
-  justify-content: space-between;
+  align-items: center;
+  
   padding: 0 6%;
 }
 
-  .navigation-list li:nth-child(1),
-  .navigation-list li:nth-child(2) {
-    text-align: left;
-  }
+.navigation-list li:nth-child(1),
+.navigation-list li:nth-child(2) {
+  text-align: left;
+}
 
-  .navigation-list li:nth-child(3),
-  .navigation-list li:nth-child(4) {
-    text-align: right;
+.navigation-list li:nth-child(3) {
+  margin-left: auto;
+}
+
+.navigation-list li:nth-child(3),
+.navigation-list li:nth-child(4) {
+  text-align: right;
 }
 
 .navigation-item {
   flex-basis: 20%;
-  padding: 16px 0;
+  padding: 15px 0;
 }
 
 .navigation-item a {
@@ -126,7 +137,7 @@ li.navigation-item.opened a {
 
 .features-text {
   padding-top: 62px;
-  padding-bottom: 44px;
+  padding-bottom: 47px;
   margin: 0 auto;
   
   text-align: center;
@@ -137,7 +148,7 @@ li.navigation-item.opened a {
 .features-text h2 {
   width: 525px;
   margin: 0 auto;
-  margin-bottom: 31px;
+  margin-bottom: 28px;
   
   font-size: 21px;
   line-height: 26px;
@@ -176,8 +187,8 @@ li.navigation-item.opened a {
 
 .feature-description {
   flex-basis: 33.333333%;
-  padding-top: 50px;
-  padding-bottom: 56px; /* Следует убрать + разобраться с серыми карточками. */
+  padding-top: 46px;
+  padding-bottom: 60px; /* Следует убрать + разобраться с серыми карточками. */
   
   text-align: center;
   color: #333333;
@@ -236,7 +247,7 @@ li.navigation-item.opened a {
   
   flex-basis: 33.333333%;
   padding-top: 56px;
-  padding-bottom: 50px;
+  padding-bottom: 76px;
   
   text-align: center;
 }
@@ -282,7 +293,7 @@ li.navigation-item.opened a {
 .hotel-search {
   position: relative;
   
-  padding-top: 55px;
+  padding-top: 50px;
   
   text-align: center;
   
@@ -290,9 +301,9 @@ li.navigation-item.opened a {
 }
 
 .hotel-search h2{
-  margin-bottom: 30px;
+  margin-bottom: 28px;
   
-  font-size: 36px;
+  font-size: 30px;
   line-height: 36px;
   font-weight: bold;
   color: #000000;
@@ -303,7 +314,7 @@ li.navigation-item.opened a {
 .search-button {
   display: block;
   width: 568px;
-  padding: 35px 0px;
+  padding: 31px 0px;
   margin: 0 auto;
   margin-top: 50px;
   
@@ -347,7 +358,7 @@ li.navigation-item.opened a {
   justify-content: space-between;
   align-items: center;
   
-  margin-bottom: 35px;
+  margin-bottom: 29px;
 }
 
 .search-item label {
@@ -495,10 +506,9 @@ li.navigation-item.opened a {
 /* Кнопка "Найти". */
 
 .item-button {
-  box-sizing: border-box;
   width: 100%;
   padding: 17px;
-  margin-top: 20px;
+  margin-top: 10px;
   
   font-size: 21px;
   line-height: 26px;
@@ -524,8 +534,6 @@ li.navigation-item.opened a {
 /* Карта. */
 
 .map {
-  position: relative;
-  
   height: 593px;
   overflow: hidden;
   
@@ -606,8 +614,6 @@ li.navigation-item.opened a {
 /* HTML academy. */
 
 .footer-logo {
-  display: flex;
-  justify-content: center;
   text-align: center;
   flex-basis: 33.333333%;
 
@@ -616,10 +622,11 @@ li.navigation-item.opened a {
 }
 
 .footer-logo a {
-  display: block;
+  display: inline-block;
   width: 115px;
   height: 41px;
   margin-left: 8px;
+  vertical-align: middle;
 }
 
 .footer-logo a:hover .footer-link-image path,
@@ -649,7 +656,7 @@ li.navigation-item.opened a {
 
 .filters form {
   display: flex;
-  padding: 30px 6%;
+  padding: 28px 6%;
 }
 
 .filter-section:nth-child(1) {
@@ -657,7 +664,7 @@ li.navigation-item.opened a {
 }
 
 .filter-section:nth-child(3) {
-  flex-basis: 35%;
+  flex-basis: 30%;
   margin-left: auto;
 }
 
@@ -697,7 +704,7 @@ li.navigation-item.opened a {
   
   font-size: 0;
   
-  border: 2px solid white;
+  border: 1px solid white;
   border-radius: 2px;
 }
 
@@ -839,7 +846,7 @@ input:checked+label::before {
 }
 
 input:focus~label {
-  font-weight: bold;
+  outline: 1px solid #81b3d2;
 }
 
 input:disabled~label {
@@ -929,9 +936,9 @@ li.result-option.checked a{
   display: flex;
   flex-wrap: wrap;
   flex-basis: 100%;
-  padding: 30px 6%;
+  padding: 28px 6%;
   
-  border-bottom: 2px solid #f6f6f6;
+  border-bottom: 1px solid #f6f6f6;
 }
 
 /* Фотокарточка. */
@@ -1067,18 +1074,14 @@ li.result-option.checked a{
   color: #796b63;
 }
 
-/* Рейтинг. Стили. */
-
-
-
 /* Стрелочки */
 
 .arrow {
   display: block;
   
-  border: 12px solid #0074d9;
-  border-right-width: 6px;
-  border-left-width: 6px;
+  border: 11px solid #0074d9;
+  border-right-width: 5px;
+  border-left-width: 5px;
   border-color: #cacaca;
   border-right-color: transparent;
   border-left-color: transparent;
