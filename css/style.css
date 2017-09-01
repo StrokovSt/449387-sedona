@@ -314,7 +314,7 @@ li.navigation-item.opened a {
 .search-button {
   display: block;
   width: 568px;
-  padding: 31px 0px;
+  padding: 29px 0px;
   margin: 0 auto;
   margin-top: 50px;
   
@@ -411,7 +411,7 @@ li.navigation-item.opened a {
   
   box-sizing: border-box;
   width: 100%;
-  padding: 8px 10px;
+  padding: 7px 10px;
   
   line-height: 26px;
   font-weight: bold;
@@ -419,6 +419,11 @@ li.navigation-item.opened a {
   
   background-color: #f2f2f2;
   border: none;
+}
+
+.search-item input::placeholder {
+  text-transform: uppercase;
+  color: #000000;
 }
 
 /* Количество регестрируемых. */
@@ -508,7 +513,7 @@ li.navigation-item.opened a {
 .item-button {
   width: 100%;
   padding: 17px;
-  margin-top: 10px;
+  margin-top: 22px;
   
   font-size: 21px;
   line-height: 26px;
@@ -704,7 +709,7 @@ li.navigation-item.opened a {
   
   font-size: 0;
   
-  border: 1px solid white;
+  border: 2px solid white;
   border-radius: 2px;
 }
 
@@ -741,6 +746,11 @@ li.navigation-item.opened a {
   outline: none;
 }
 
+.price-controls input::placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
 /* Сами ползунок. */
 
 .range-controls {
@@ -765,13 +775,13 @@ li.navigation-item.opened a {
 
 .range-toggle {
   position: absolute;
-  top: -11px;
+  top: -10px;
   
   width: 4px;
   height: 4px;
   
   background: #ababab;
-  border: 11px solid #ffffff;
+  border: 8px solid #ffffff;
   border-radius: 50%;
   box-shadow: 0 2px 1px rgba(0, 1, 1, 0.2);
   
@@ -792,14 +802,14 @@ li.navigation-item.opened a {
   width: 6px;
   height: 6px;
   
-  border: 12px solid #ffffff;
+  border: 9px solid #ffffff;
 }
 
 /* Кнопка. */
 
 .filter-button {
   display: block;
-  padding: 6px 35px;
+  padding: 7px 31px;
   margin: 0 auto;
   
   color: #ffffff;
@@ -859,7 +869,7 @@ input:disabled~label {
 .result-form {
   display: flex;
   align-items: stretch;
-  padding: 28px 6%;
+  padding: 29px 6%;
   
   background-color: #ffffff;
   border-bottom: 2px solid #f6f6f6;
@@ -902,6 +912,7 @@ input:disabled~label {
   color: #000000;
   
   opacity: 0.3;
+  border-bottom: 1px dotted #81b3d2;
 }
 
 .result-list a:hover,
@@ -921,6 +932,7 @@ li.result-option.checked a{
   color: #81b3d2;
   
   opacity: 1;
+  border: none;
 }
 
 /* Карточки отелей. */
