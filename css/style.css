@@ -43,7 +43,7 @@ button {
   margin: 0 auto;
   
   background-color: #ffffff;
-  box-shadow: 0 0 5px 5px #e7e7e7;
+  box-shadow: 0 0 5px 5px #e1e1e1;
 }
 
 /* Оформление главное картинки приветствия. */
@@ -59,6 +59,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 21%;
+  background-color: #647888;
 }
 
 .attraction-tagline {
@@ -98,6 +99,14 @@ button {
   text-align: left;
 }
 
+.navigation-list li:nth-child(2) a {
+  margin-left: 30px;
+}
+
+.navigation-list li:nth-child(3) a {
+  margin-right: 32px;
+}
+
 .navigation-list li:nth-child(3) {
   margin-left: auto;
 }
@@ -129,15 +138,15 @@ button {
   opacity: 0.3;
 }
 
-li.navigation-item.opened a {
+li.navigation-item.opened a{
   color: #766357;
 }
 
 /* Особенности. */
 
 .features-text {
-  padding-top: 62px;
-  padding-bottom: 47px;
+  padding-top: 60px;
+  padding-bottom: 51px;
   margin: 0 auto;
   
   text-align: center;
@@ -148,7 +157,7 @@ li.navigation-item.opened a {
 .features-text h2 {
   width: 525px;
   margin: 0 auto;
-  margin-bottom: 28px;
+  margin-bottom: 27px;
   
   font-size: 21px;
   line-height: 26px;
@@ -187,8 +196,8 @@ li.navigation-item.opened a {
 
 .feature-description {
   flex-basis: 33.333333%;
-  padding-top: 46px;
-  padding-bottom: 60px; /* Следует убрать + разобраться с серыми карточками. */
+  padding-top: 47px;
+  padding-bottom: 58px; /* Следует убрать + разобраться с серыми карточками. */
   
   text-align: center;
   color: #333333;
@@ -204,14 +213,18 @@ li.navigation-item.opened a {
   font-weight: bold;
 }
 
-.feature-description p {
-  width: 70%;
-  margin: 0 auto;
-  margin-top: 22px;
+.feature-number {
+  margin-top: 24px;
 }
 
-.little-description p {
-  width: 80%;
+.feature-words {
+  margin: 0 auto;
+  margin-top: 21px;
+  width: 70%;
+}
+
+.little-description {
+  width: 76%;
 }
 
 .important {
@@ -230,14 +243,17 @@ li.navigation-item.opened a {
   
   background-image: url(../img/feature-1.jpg);
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: 50% 54%;
   background-size: cover;
+  background-color: #b28e71;
 }
 
 .feature-2 {
   order: -1;
   
   background-image: url(../img/feature-2.jpg);
+  background-position: 50% 53%;
+  background-color: #8e5c4a;
 }
 
 /* Безномерные карточки. */
@@ -245,16 +261,16 @@ li.navigation-item.opened a {
 .feature-item {
   position: relative;
   
-  flex-basis: 33.333333%;
+  flex-basis: 33.333333333%;
   padding-top: 56px;
-  padding-bottom: 76px;
+  padding-bottom: 82px;
   
   text-align: center;
 }
 
 .feature-item h2 {
-  margin-top: 33px;
-  margin-bottom: 28px;
+  margin-top: 27px;
+  margin-bottom: 24px;
   
   font-size: 21px;
   font-weight: bold;
@@ -269,7 +285,7 @@ li.navigation-item.opened a {
 .feature-item::before {
   display: block;
   width: 76px;
-  height: 76px;
+  height: 78px;
   margin: 0 auto;
   
   content: "";
@@ -293,7 +309,7 @@ li.navigation-item.opened a {
 .hotel-search {
   position: relative;
   
-  padding-top: 50px;
+  padding-top: 51px;
   
   text-align: center;
   
@@ -314,7 +330,7 @@ li.navigation-item.opened a {
 .search-button {
   display: block;
   width: 568px;
-  padding: 29px 0px;
+  padding: 30px 0px;
   margin: 0 auto;
   margin-top: 50px;
   
@@ -349,6 +365,7 @@ li.navigation-item.opened a {
   padding: 55px;
   
   background-color: #ffffff;
+  box-shadow: 0px 2px 5px 2px #dedede;
 }
 
 /* Стилизация всплывающего окна. */
@@ -358,6 +375,10 @@ li.navigation-item.opened a {
   justify-content: space-between;
   align-items: center;
   
+  margin-bottom: 27px;
+}
+
+.search-item:nth-child(2) {
   margin-bottom: 29px;
 }
 
@@ -411,6 +432,7 @@ li.navigation-item.opened a {
   
   box-sizing: border-box;
   width: 100%;
+  height: 38px;
   padding: 7px 10px;
   
   line-height: 26px;
@@ -512,8 +534,8 @@ li.navigation-item.opened a {
 
 .item-button {
   width: 100%;
-  padding: 17px;
-  margin-top: 22px;
+  padding: 16px;
+  margin-top: 29px;
   
   font-size: 21px;
   line-height: 26px;
@@ -545,6 +567,7 @@ li.navigation-item.opened a {
   background-image: url("../img/map.jpg");
   background-repeat: no-repeat;
   background-position: 50% 90%;
+  background-color: #e0edbc;
 }
 
 /* Подвал. */
@@ -648,7 +671,8 @@ li.navigation-item.opened a {
 .hotels-background {
   background-image: url("../img/background-filter.jpg");
   background-repeat: no-repeat;
-  background-position: 50% 20%;
+  background-position: 50% 17%;
+  background-color: #425464;
 }
 
 .filter-list,
@@ -662,6 +686,7 @@ li.navigation-item.opened a {
 .filters form {
   display: flex;
   padding: 28px 6%;
+  padding-bottom: 33px;
 }
 
 .filter-section:nth-child(1) {
@@ -694,8 +719,10 @@ li.navigation-item.opened a {
 .filter-item label {
   display: inline-block;
   padding-left: 40px;
-  margin-top: 26px;
+  margin-top: 24px;
 }
+
+
 
 /* Контейнер с ползунком. */
 
@@ -734,6 +761,10 @@ li.navigation-item.opened a {
   cursor: pointer;
 }
 
+.price-controls label:last-child {
+  padding-left: 15%;
+}
+
 .price-controls input {
   width: 50px;
   margin: 0;
@@ -746,7 +777,24 @@ li.navigation-item.opened a {
   outline: none;
 }
 
+/* Адекватное отображение placeholder'а для различных браузеров. */
+
 .price-controls input::placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.price-controls input::-webkit-input-placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.price-controls input::-moz-placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.price-controls input::-ms-input-placeholder {
   color: #ffffff;
   text-transform: uppercase;
 }
@@ -809,8 +857,8 @@ li.navigation-item.opened a {
 
 .filter-button {
   display: block;
-  padding: 7px 31px;
-  margin: 0 auto;
+  padding: 8px 31px;
+  margin: 0 26%;
   
   color: #ffffff;
   text-align: center;
@@ -886,7 +934,6 @@ input:disabled~label {
 
 .result-list {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   width: 370px;
   margin-left: 0px;
@@ -907,6 +954,8 @@ input:disabled~label {
 }
 
 .result-list a {
+  margin-left: 35px;
+  
   font-size: 12px;
   line-height: 18px;
   color: #000000;
@@ -948,7 +997,8 @@ li.result-option.checked a{
   display: flex;
   flex-wrap: wrap;
   flex-basis: 100%;
-  padding: 28px 6%;
+  padding: 26px 6%;
+  padding-bottom: 30px;
   
   border-bottom: 1px solid #f6f6f6;
 }
@@ -977,7 +1027,7 @@ li.result-option.checked a{
 }
 
 .description-branch b {
-  margin-bottom: 14px;
+  margin-bottom: 15px;
 }
 
 .description-branch:nth-child(2) {
@@ -1038,7 +1088,7 @@ li.result-option.checked a{
 .description-branch a {
   display: inline-block;
   width: 110px;
-  padding: 4px 0px;
+  padding: 3px 0px;
   
   text-align: center;
   font-weight: bold;
@@ -1066,7 +1116,7 @@ li.result-option.checked a{
 .description-branch:nth-child(2) a {
   display: block;
   width: 142px;
-  padding: 4px 0px;
+  padding: 3px 0px;
   
   text-align: center;
   font-weight: bold;
