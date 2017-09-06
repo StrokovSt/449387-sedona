@@ -15,13 +15,13 @@
     <header class="main-header">
       <nav class="head-navigation">
         <ul class="navigation-list">
-          <li class="navigation-item"><a href="#">Информация</a></li>
-          <li class="navigation-item"><a href="#">Фото и видео</a></li>
-          <li class="navigation-item"><a href="#">Карта штата</a></li>
-          <li class="navigation-item"><a href="hotels.html">Гостиницы</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="#">Информация</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="#">Фото и видео</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="#">Карта штата</a></li>
+          <li class="navigation-item"><a class="navigation-link" href="hotels.html">Гостиницы</a></li>
         </ul>
+        <a class="header-logo"><img src="img/logo-sedona.png" width="138px" height="70px" alt="Logo Sedona"></a>
       </nav>
-      <a class="header-logo"><img src="img/logo-sedona.png" width="138px" height="70px" alt="Logo Sedona"></a>
     </header>
       
   <!-- Основной блок. Приветствие. -->
@@ -149,7 +149,7 @@
       
 <!-- Основной блок. Карта. -->
      
-      <section class="map">
+      <section id="map" class="map">
         <h2 class="visually-hidden">Карта</h2>
       </section>
     </main>
@@ -190,5 +190,10 @@
       </div>
     </footer>
   </div>
+  <script src="js/map.js"></script>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDxD1C9dPsCyyjlqdPbLASgPks1OR1xsrI&callback=initMap">
+  </script>
+  
 </body>
 </html>

@@ -6,8 +6,8 @@ body {
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
-  color: #333333;
   text-transform: uppercase;
+  color: #333333;
   
   background-color: #f2f2f2;
 }
@@ -21,6 +21,7 @@ a {
 p, h2, h3, ul {
   margin: 0;
   padding: 0;
+  
   list-style: none;
 }
 
@@ -43,7 +44,8 @@ button {
   margin: 0 auto;
   
   background-color: #ffffff;
-  box-shadow: 0 0 5px 5px #e1e1e1;
+  -webkit-box-shadow: 0 0 5px 5px #e8e8e8;
+          box-shadow: 0 0 5px 5px #e8e8e8;
 }
 
 /* Оформление главное картинки приветствия. */
@@ -84,12 +86,20 @@ button {
   
   display: block;
   
-  transform: translate(-50%);
+  -webkit-transform: translate(-50%);
+  
+      -ms-transform: translate(-50%);
+  
+          transform: translate(-50%);
 }
 
 .navigation-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   
   padding: 0 6%;
 }
@@ -117,28 +127,29 @@ button {
 }
 
 .navigation-item {
-  flex-basis: 20%;
+  -ms-flex-preferred-size: 20%;
+      flex-basis: 20%;
   padding: 15px 0;
 }
 
-.navigation-item a {
+.navigation-link {
   color: #000000;
 }
 
-.navigation-item a:hover,
-.navigation-item a:focus {
+.navigation-link:hover,
+.navigation-link:focus {
   color: #81b3d2;
   
   outline: none;
 }
 
-.navigation-item a:active {
+.navigation-link:active {
   color: #000000;
   
   opacity: 0.3;
 }
 
-li.navigation-item.opened a{
+li.navigation-item .navigation-link.opened {
   color: #766357;
 }
 
@@ -189,13 +200,16 @@ li.navigation-item.opened a{
 /* Список приемуществ. */
 
 .features-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 /* Номерные карточки. */
 
 .feature-description {
-  flex-basis: 33.333333%;
+  -ms-flex-preferred-size: 33.333333333%;
+      flex-basis: 33.333333333%;
   padding-top: 47px;
   padding-bottom: 58px; /* Следует убрать + разобраться с серыми карточками. */
   
@@ -218,9 +232,9 @@ li.navigation-item.opened a{
 }
 
 .feature-words {
+  width: 70%;
   margin: 0 auto;
   margin-top: 21px;
-  width: 70%;
 }
 
 .little-description {
@@ -236,7 +250,8 @@ li.navigation-item.opened a{
 /* Изображения. */
 
 .feature-image {
-  flex-basis: 66.666666%;
+  -ms-flex-preferred-size: 66.6666666666%;
+      flex-basis: 66.6666666666%;
   height: 256px;
   
   overflow: hidden;
@@ -249,7 +264,9 @@ li.navigation-item.opened a{
 }
 
 .feature-2 {
-  order: -1;
+  -webkit-box-ordinal-group: 0;
+      -ms-flex-order: -1;
+          order: -1;
   
   background-image: url(../img/feature-2.jpg);
   background-position: 50% 53%;
@@ -261,7 +278,9 @@ li.navigation-item.opened a{
 .feature-item {
   position: relative;
   
-  flex-basis: 33.333333333%;
+  -ms-flex-preferred-size: 33.333333333%;
+  
+      flex-basis: 33.333333333%;
   padding-top: 56px;
   padding-bottom: 82px;
   
@@ -358,23 +377,36 @@ li.navigation-item.opened a{
   position: absolute;
   left: 50%;
   z-index: 2;
-  transform: translate(-50%);
   
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  
+          box-sizing: border-box;
   width: 568px;
   padding: 55px;
   
   background-color: #ffffff;
-  box-shadow: 0px 2px 5px 2px #dedede;
+  -webkit-box-shadow: 0px 2px 5px 2px #ccd6b8;
+          box-shadow: 0px 2px 5px 2px #ccd6b8;
+  
+  -webkit-transform: translate(-50%);
+  
+      -ms-transform: translate(-50%);
+  
+          transform: translate(-50%);
 }
 
 /* Стилизация всплывающего окна. */
 
 .search-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   margin-bottom: 27px;
 }
 
@@ -403,7 +435,9 @@ li.navigation-item.opened a{
   z-index: 2;
   
   text-align: center;
-  transform: translate(40%, -50%);
+  -webkit-transform: translate(40%, -50%);
+      -ms-transform: translate(40%, -50%);
+          transform: translate(40%, -50%);
   cursor: pointer;
   
   background-color: transparent;
@@ -428,11 +462,10 @@ li.navigation-item.opened a{
 
 .arrival-date,
 .date-of-departure {
-  position: relative;
-  
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 100%;
-  height: 38px;
+  min-height: 38px;
   padding: 7px 10px;
   
   line-height: 26px;
@@ -443,6 +476,16 @@ li.navigation-item.opened a{
   border: none;
 }
 
+.search-item input::-webkit-input-placeholder {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.search-item input:-ms-input-placeholder {
+  text-transform: uppercase;
+  color: #000000;
+}
+
 .search-item input::placeholder {
   text-transform: uppercase;
   color: #000000;
@@ -451,15 +494,24 @@ li.navigation-item.opened a{
 /* Количество регестрируемых. */
 
 .search-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   
-  box-sizing: border-box;
-  flex-basis: 50%;
+  -webkit-box-sizing: border-box;
+  
+          box-sizing: border-box;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
 }
 
 .search-section:last-child {
-  justify-content: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
 .search-section:first-child label {
@@ -471,11 +523,14 @@ li.navigation-item.opened a{
 }
 
 .search-branch {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .adults-number {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 38px;
   height: 38px;
   
@@ -509,7 +564,8 @@ li.navigation-item.opened a{
   width: 38px;
   height: 38px;
   
-  font-size: 14px;
+  font-family: inherit;
+  font-size: 20px;
   line-height: 26px;
   font-weight: bold;
   color: #a9a9a9;
@@ -535,8 +591,9 @@ li.navigation-item.opened a{
 .item-button {
   width: 100%;
   padding: 16px;
-  margin-top: 29px;
+  margin-top: 26px;
   
+  font-family: inherit;
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
@@ -581,16 +638,25 @@ li.navigation-item.opened a{
 }
 
 .main-footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   
   padding: 36px 0;
   
-  align-items: center;
+  -webkit-box-align: center;
+  
+      -ms-flex-align: center;
+  
+          align-items: center;
 }
 
 .footer-visit {
-  flex-basis: 33.333333%;
+  -ms-flex-preferred-size: 33.333333%;
+      flex-basis: 33.333333%;
   text-align: center;
   
   font-size: 21px;
@@ -602,12 +668,17 @@ li.navigation-item.opened a{
 /* Социальные сети. */
 
 .footer-social {
-  flex-basis: 33.333333%;
+  -ms-flex-preferred-size: 33.333333%;
+      flex-basis: 33.333333%;
 }
 
 .social-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   text-align: center;
 }
 
@@ -616,9 +687,15 @@ li.navigation-item.opened a{
 }
 
 .social-button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 46px;
   height: 48px;
   
@@ -643,7 +720,8 @@ li.navigation-item.opened a{
 
 .footer-logo {
   text-align: center;
-  flex-basis: 33.333333%;
+  -ms-flex-preferred-size: 33.333333%;
+      flex-basis: 33.333333%;
 
   line-height: 26px;
   color: #000000;
@@ -684,6 +762,8 @@ li.navigation-item.opened a{
 /* Список фильтров */
 
 .filters form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   padding: 28px 6%;
   padding-bottom: 33px;
@@ -694,7 +774,8 @@ li.navigation-item.opened a{
 }
 
 .filter-section:nth-child(3) {
-  flex-basis: 30%;
+  -ms-flex-preferred-size: 30%;
+      flex-basis: 30%;
   margin-left: auto;
 }
 
@@ -729,8 +810,14 @@ li.navigation-item.opened a{
 .price-controls {
   position: relative;
   
+  display: -webkit-box;
+  
+  display: -ms-flexbox;
+  
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   height: 32px;
   margin-top: 10px;
   
@@ -743,6 +830,7 @@ li.navigation-item.opened a{
 .price-controls::after {
   position: absolute;
   left: 50%;
+  top: 15%;
   
   width: 2px;
   height: 22px;
@@ -752,7 +840,8 @@ li.navigation-item.opened a{
 }
 
 .price-controls label {
-  flex-basis: 50%;
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
   padding-left: 20%;
   
   font-size: 14px;
@@ -772,12 +861,22 @@ li.navigation-item.opened a{
   color: inherit;
   font: inherit;
   
-  background: inherit;
+  background: none;
   border: none;
   outline: none;
 }
 
 /* Адекватное отображение placeholder'а для различных браузеров. */
+
+.price-controls input::-webkit-input-placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
+
+.price-controls input:-ms-input-placeholder {
+  color: #ffffff;
+  text-transform: uppercase;
+}
 
 .price-controls input::placeholder {
   color: #ffffff;
@@ -831,7 +930,8 @@ li.navigation-item.opened a{
   background: #ababab;
   border: 8px solid #ffffff;
   border-radius: 50%;
-  box-shadow: 0 2px 1px rgba(0, 1, 1, 0.2);
+  -webkit-box-shadow: 0 2px 1px rgba(0, 1, 1, 0.2);
+          box-shadow: 0 2px 1px rgba(0, 1, 1, 0.2);
   
   cursor: pointer;
 }
@@ -857,9 +957,10 @@ li.navigation-item.opened a{
 
 .filter-button {
   display: block;
-  padding: 8px 31px;
+  padding: 8px 34px;
   margin: 0 26%;
   
+  font-family: inherit;
   color: #ffffff;
   text-align: center;
   
@@ -908,15 +1009,20 @@ input:focus~label {
 }
 
 input:disabled~label {
-  filter: brightness(0.6);
+  -webkit-filter: brightness(0.6);
+          filter: brightness(0.6);
 }
 
 
 /* Фильтр результатов. */
 
 .result-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: stretch;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
   padding: 29px 6%;
   
   background-color: #ffffff;
@@ -933,15 +1039,22 @@ input:disabled~label {
 }
 
 .result-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   width: 370px;
   margin-left: 0px;
 }
 
 .result-list-star {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-self: center;
+  -ms-flex-item-align: center;
+      align-self: center;
   margin-left: auto;
 }
 
@@ -987,16 +1100,23 @@ li.result-option.checked a{
 /* Карточки отелей. */
 
 .hotel-list {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   padding: 0;
   margin: 0;
 }
 
 .hotel-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
-  flex-basis: 100%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   padding: 26px 6%;
   padding-bottom: 30px;
   
@@ -1006,6 +1126,8 @@ li.result-option.checked a{
 /* Фотокарточка. */
   
 .hotel-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
   margin-top: auto;
   margin-right: 30px;
@@ -1018,12 +1140,19 @@ li.result-option.checked a{
 }
 
 .description-section {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .description-branch {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .description-branch b {
@@ -1037,9 +1166,16 @@ li.result-option.checked a{
 /* Рейтинг. */
 
 .hotel-rating {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
   margin-left: auto;
 }
 
@@ -1051,13 +1187,14 @@ li.result-option.checked a{
 }
 
 .rating-branch:first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 
 .rating-branch span {
-  margin-left: 3px;
+  margin-left: 4px;
 }
-
 
 /* Стили карточек */
 
@@ -1151,7 +1288,9 @@ li.result-option.checked a{
 }
 
 .arrow-up {
-  transform: rotate(180deg);
+  -webkit-transform: rotate(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotate(180deg);
   margin-right: 12px;
 }
 
