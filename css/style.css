@@ -149,8 +149,10 @@ button {
   opacity: 0.3;
 }
 
-li.navigation-item .navigation-link.opened {
+li.navigation-item.opened .navigation-link {
   color: #766357;
+  
+  opacity: 1;
 }
 
 /* Особенности. */
