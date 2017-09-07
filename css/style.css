@@ -2,7 +2,7 @@ body {
   padding: 0;
   margin: 0px;
   
-  font-family: "PT Sans", sans-serif;
+  font-family: "PT Sans", "Arial", sans-serif;
   font-size: 14px;
   line-height: 21px;
   font-weight: normal;
@@ -205,6 +205,7 @@ li.navigation-item.opened .navigation-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  flex-wrap: wrap;
 }
 
 /* Номерные карточки. */
@@ -355,6 +356,7 @@ li.navigation-item.opened .navigation-link {
   margin: 0 auto;
   margin-top: 50px;
   
+  vertical-align: middle;
   font-size: 21px;
   line-height: 26px;
   font-weight: bold;
@@ -751,6 +753,7 @@ li.navigation-item.opened .navigation-link {
   width: 115px;
   height: 41px;
   margin-left: 8px;
+  
   vertical-align: middle;
 }
 
@@ -1241,6 +1244,7 @@ li.result-option.checked a{
   width: 110px;
   padding: 3px 0px;
   
+  vertical-align: middle;
   text-align: center;
   font-weight: bold;
   color: #ffffff;
