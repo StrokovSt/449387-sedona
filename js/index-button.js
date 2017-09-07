@@ -4,6 +4,7 @@ var arrival = document.querySelector(".arrival-date");
 var departure = document.querySelector(".date-of-departure");
 var storage = localStorage.getItem("arrival");
 var adults = document.querySelectorAll(".adults-number");
+var calendar = document.querySelectorAll(".calendar");
 
 link.addEventListener("click", function(evt) {
   evt.preventDefault();

@@ -349,7 +349,7 @@ li.navigation-item.opened .navigation-link {
 /* Кнопка "Поиск гостиниц". */
 
 .search-button {
-  display: block;
+  display: inline-block;
   width: 568px;
   padding: 30px 0px;
   margin: 0 auto;
@@ -822,8 +822,6 @@ li.navigation-item.opened .navigation-link {
   margin-top: 24px;
 }
 
-
-
 /* Контейнер с ползунком. */
 
 .price-controls {
@@ -964,12 +962,8 @@ li.navigation-item.opened .navigation-link {
 }
 
 .range-toggle:hover {
-  top: -12px;
-  
   width: 6px;
   height: 6px;
-  
-  border: 9px solid #ffffff;
 }
 
 /* Кнопка. */
@@ -991,7 +985,8 @@ li.navigation-item.opened .navigation-link {
   cursor: pointer;
 }
 
-.filter-button:hover {
+.filter-button:hover,
+.filter-button:focus {
   color: #000000;
   
   background: rgba(255, 255, 255, 1);
