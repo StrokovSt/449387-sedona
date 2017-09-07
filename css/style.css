@@ -380,6 +380,10 @@ li.navigation-item.opened .navigation-link {
   left: 50%;
   z-index: 2;
   
+  display: none;
+  animation-name: form-movie;
+  animation-duration: 0.6s;
+  
   -webkit-box-sizing: border-box;
   
           box-sizing: border-box;
@@ -395,6 +399,10 @@ li.navigation-item.opened .navigation-link {
       -ms-transform: translate(-50%);
   
           transform: translate(-50%);
+}
+
+.search-form-show {
+  display: block;
 }
 
 /* Стилизация всплывающего окна. */
@@ -615,6 +623,15 @@ li.navigation-item.opened .navigation-link {
   color: #88b6d1;
   
   background-color: #5496bd;
+}
+
+/* Форма поиска. Анимация. */
+
+@keyframes form-movie {
+  0% {
+    transform: translate(-50%, -80px);
+    opacity: 0;
+  }
 }
 
 /* Карта. */
