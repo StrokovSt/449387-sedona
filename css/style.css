@@ -70,7 +70,6 @@ button {
   margin-top: 76px;
 }
 
-
 /* Хэдер. Навигация. */
 
 .head-navigation {
@@ -100,7 +99,6 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  
   padding: 0 6%;
 }
 
@@ -259,7 +257,7 @@ li.navigation-item.opened .navigation-link {
   
   overflow: hidden;
   
-  background-image: url(../img/feature-1.jpg);
+  background-image: url("../img/feature-1.jpg");
   background-repeat: no-repeat;
   background-position: 50% 54%;
   background-size: cover;
@@ -271,7 +269,7 @@ li.navigation-item.opened .navigation-link {
       -ms-flex-order: -1;
           order: -1;
   
-  background-image: url(../img/feature-2.jpg);
+  background-image: url("../img/feature-2.jpg");
   background-position: 50% 53%;
   background-color: #8e5c4a;
 }
@@ -324,7 +322,6 @@ li.navigation-item.opened .navigation-link {
 .feature-item:nth-child(3)::before {
   background-image: url("../img/svg-sedona/icon-2.svg");
 }
-
 
 /* Поиск гостиниц. */
 
@@ -380,27 +377,21 @@ li.navigation-item.opened .navigation-link {
 .search-form {
   position: absolute;
   left: 50%;
+  transform: translateX(-50%);
+
   z-index: 2;
   
   display: none;
-  animation-name: form-movie;
-  animation-duration: 0.6s;
   
-  -webkit-box-sizing: border-box;
-  
-          box-sizing: border-box;
+  box-sizing: border-box;
   width: 568px;
   padding: 55px;
   
   background-color: #ffffff;
-  -webkit-box-shadow: 0px 2px 5px 2px #ccd6b8;
-          box-shadow: 0px 2px 5px 2px #ccd6b8;
+  box-shadow: 0px 5px 5px 2px #ccd6b8;
   
-  -webkit-transform: translate(-50%);
-  
-      -ms-transform: translate(-50%);
-  
-          transform: translate(-50%);
+  animation-name: form-movie;
+  animation-duration: 0.6s;
 }
 
 .search-form-show {
@@ -499,6 +490,16 @@ li.navigation-item.opened .navigation-link {
 }
 
 .search-item input::placeholder {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.search-item input::-moz-placeholder {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.search-item input::-moz-placeholder {
   text-transform: uppercase;
   color: #000000;
 }
@@ -637,9 +638,9 @@ li.navigation-item.opened .navigation-link {
 }
 
 @keyframes form-error-shake {
-  0%, 100% { transform: translateX(0); }
-  10%, 30%, 50%, 70%, 90% { transform: translateX(-10px); }
-  20%, 40%, 60%, 80% { transform: translateX(10px); } 
+  0%, 100% { transform: translate(-50%, 0); }
+  10%, 30%, 50%, 70%, 90% { transform: translate(-53%, 0); }
+  20%, 40%, 60%, 80% { transform: translate(-48%, 0); } 
 }
 
 .form-error {
@@ -747,7 +748,6 @@ li.navigation-item.opened .navigation-link {
   background-color: #5496bd;
 }
 
-
 /* HTML academy. */
 
 .footer-logo {
@@ -768,12 +768,12 @@ li.navigation-item.opened .navigation-link {
   vertical-align: middle;
 }
 
-.footer-logo a:hover .footer-link-image path,
-.footer-logo a:focus .footer-link-image path {
+.footer-link-image:hover path,
+.footer-link-image:focus path {
   fill: #81b3d2;
 }
 
-.footer-logo a:active .footer-link-image path {
+.footer-link-image:active path {
   fill: #bdbbbc;
 }
 
@@ -831,7 +831,7 @@ li.navigation-item.opened .navigation-link {
 }
 
 .filter-item label {
-  display: inline-block;
+  display: block;
   padding-left: 40px;
   margin-top: 24px;
 }
@@ -941,7 +941,7 @@ li.navigation-item.opened .navigation-link {
   margin-top: 20px;
   height: 2px;
   
-  background: rgba(255,255,255,0.3  );
+  background: rgba(255,255,255,0.3);
 }
 
 .bar {
@@ -1041,7 +1041,6 @@ input:disabled~label {
           filter: brightness(0.6);
 }
 
-
 /* Фильтр результатов. */
 
 .result-form {
@@ -1057,7 +1056,7 @@ input:disabled~label {
   border-bottom: 2px solid #f6f6f6;
 }
 
-.results-filter legend {
+.results-filter h2 {
   width: 135px;
   margin-right: 30px;
   
@@ -1088,7 +1087,7 @@ input:disabled~label {
 
 /* Стилизация сортировки. */
 
-.result-list p {
+.result-list li:first-child {
   font-size: 12px;
   line-height: 18px;
   color: #000000;
@@ -1114,11 +1113,12 @@ input:disabled~label {
 
 .result-list a:active {
   color: #000000;
+  border: none;
   
   opacity: 1;
 }
 
-li.result-option.checked a{
+.result-option.selected a{
   color: #81b3d2;
   
   opacity: 1;
@@ -1160,7 +1160,6 @@ li.result-option.checked a{
   margin-top: auto;
   margin-right: 30px;
 }
-
 
 /* Описание. */
 
@@ -1209,7 +1208,7 @@ li.result-option.checked a{
 
 .rating-branch:last-child {
   margin-top: auto;
-  padding: 1px 12px;
+  padding: 3px 14px;
   
   background-color: #f2f2f2;
 }
@@ -1250,7 +1249,7 @@ li.result-option.checked a{
 
 /* Карточки отелей. Кнопки. */
 
-.description-branch a {
+.info {
   display: inline-block;
   width: 110px;
   padding: 3px 0px;
@@ -1263,23 +1262,17 @@ li.result-option.checked a{
   background-color: #81b3d2;
 }
 
-.description-branch:nth-child(2) a {
-  width: 142px;
-  
-  background-color: #766357;
-}
-
-.description-branch:nth-child(1) a:hover,
-.description-branch:nth-child(1) a:focus {
+.info:hover,
+.info:focus {
   background-color: #669ec0;
 }
 
-.description-branch:nth-child(1) a:active {
+.info:active {
   background-color: #5496bd;
   color: #81b1ce;
 }
 
-.description-branch:nth-child(2) a {
+.book-it {
   display: block;
   width: 142px;
   padding: 3px 0px;
@@ -1292,12 +1285,12 @@ li.result-option.checked a{
   background-color: #766357;
 }
 
-.description-branch:nth-child(2) a:hover,
-.description-branch:nth-child(2) a:focus {
+.book-it:hover,
+.book-it:focus {
   background-color: #604e43;
 }
 
-.description-branch:nth-child(2) a:active {
+.book-it:active {
   background-color: #503e33;
   color: #796b63;
 }
