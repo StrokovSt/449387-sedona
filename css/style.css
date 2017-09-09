@@ -1163,9 +1163,6 @@ input:disabled~label {
 
 /* Описание. */
 
-.hotel-description {
-}
-
 .description-section {
   display: -webkit-box;
   display: -ms-flexbox;
