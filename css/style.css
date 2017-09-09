@@ -102,25 +102,25 @@ button {
   padding: 0 6%;
 }
 
-.navigation-list li:nth-child(1),
-.navigation-list li:nth-child(2) {
+.navigation-item:nth-child(1),
+.navigation-item:nth-child(2) {
   text-align: left;
 }
 
-.navigation-list li:nth-child(2) a {
+.navigation-item:nth-child(2) a {
   margin-left: 30px;
 }
 
-.navigation-list li:nth-child(3) a {
+.navigation-item:nth-child(3) a {
   margin-right: 32px;
 }
 
-.navigation-list li:nth-child(3) {
+.navigation-item:nth-child(3) {
   margin-left: auto;
 }
 
-.navigation-list li:nth-child(3),
-.navigation-list li:nth-child(4) {
+.navigation-item:nth-child(3),
+.navigation-item:nth-child(4) {
   text-align: right;
 }
 
@@ -147,7 +147,7 @@ button {
   opacity: 0.3;
 }
 
-li.navigation-item.opened .navigation-link {
+.opened .navigation-link {
   color: #766357;
   
   opacity: 1;
@@ -209,8 +209,8 @@ li.navigation-item.opened .navigation-link {
 /* Номерные карточки. */
 
 .feature-description {
-  -ms-flex-preferred-size: 33.333333333%;
-      flex-basis: 33.333333333%;
+  -ms-flex-preferred-size: 33%;
+      flex-basis: 33%;
   padding-top: 47px;
   padding-bottom: 58px; /* Следует убрать + разобраться с серыми карточками. */
   
@@ -218,6 +218,10 @@ li.navigation-item.opened .navigation-link {
   color: #333333;
   
   background-color: #eeeeee;
+}
+
+.feature-description:nth-child(2) {
+  flex-basis: 34%;
 }
 
 .feature-description h2 {
@@ -251,8 +255,8 @@ li.navigation-item.opened .navigation-link {
 /* Изображения. */
 
 .feature-image {
-  -ms-flex-preferred-size: 66.6666666666%;
-      flex-basis: 66.6666666666%;
+  -ms-flex-preferred-size: 67%;
+      flex-basis: 67%;
   height: 256px;
   
   overflow: hidden;
@@ -425,7 +429,7 @@ li.navigation-item.opened .navigation-link {
 
 /* Дата приезда/выезда. */
 
-.input-cal {
+.input-calendar {
   position: relative;
   
   width: 346px;
@@ -479,29 +483,18 @@ li.navigation-item.opened .navigation-link {
   border: none;
 }
 
-.search-item input::-webkit-input-placeholder {
-  text-transform: uppercase;
-  color: #000000;
-}
-
-.search-item input:-ms-input-placeholder {
-  text-transform: uppercase;
-  color: #000000;
-}
-
+.search-item input::-webkit-input-placeholder,
+.search-item input:-ms-input-placeholder,
+.search-item input::-moz-placeholder,
+.search-item input:-moz-placeholder,
 .search-item input::placeholder {
   text-transform: uppercase;
   color: #000000;
 }
 
-.search-item input::-moz-placeholder {
-  text-transform: uppercase;
-  color: #000000;
-}
-
-.search-item input::-moz-placeholder {
-  text-transform: uppercase;
-  color: #000000;
+.search-item input::-moz-placeholder,
+.search-item input:-moz-placeholder {
+  opacity: 1;
 }
 
 /* Количество регестрируемых. */
@@ -899,34 +892,18 @@ li.navigation-item.opened .navigation-link {
 
 /* Адекватное отображение placeholder'а для различных браузеров. */
 
-.price-controls input::-webkit-input-placeholder {
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.price-controls input:-ms-input-placeholder {
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
+.price-controls input::-webkit-input-placeholder,
+.price-controls input:-ms-input-placeholder,
+.price-controls input::-moz-placeholder,
+.price-controls input:-moz-placeholder,
 .price-controls input::placeholder {
   color: #ffffff;
   text-transform: uppercase;
 }
 
-.price-controls input::-webkit-input-placeholder {
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.price-controls input::-moz-placeholder {
-  color: #ffffff;
-  text-transform: uppercase;
-}
-
-.price-controls input::-ms-input-placeholder {
-  color: #ffffff;
-  text-transform: uppercase;
+.price-controls input::-moz-placeholder,
+.price-controls input:-moz-placeholder {
+  opacity: 1;
 }
 
 /* Сами ползунок. */
@@ -1093,7 +1070,7 @@ input:disabled~label {
   color: #000000;
 }
 
-.result-list a {
+.result-link {
   margin-left: 35px;
   
   font-size: 12px;
@@ -1104,21 +1081,21 @@ input:disabled~label {
   border-bottom: 1px dotted #81b3d2;
 }
 
-.result-list a:hover,
-.result-list a:focus {
+.result-link:hover,
+.result-link:focus {
   color: #81b3d2;
   
   opacity: 1;
 }
 
-.result-list a:active {
+.result-link:active {
   color: #000000;
   border: none;
   
   opacity: 1;
 }
 
-.result-option.selected a{
+.selected .result-link{
   color: #81b3d2;
   
   opacity: 1;
@@ -1313,20 +1290,17 @@ input:disabled~label {
   margin-right: 12px;
 }
 
-li .arrow-down.checked {
-  border-top-color: #81b3d2;
-}
-
-.arrow-up:hover,
-.arrow-up:focus,
-.arrow-down:hover,
-.arrow-down:focus {
+.arrow:hover,
+.arrow:focus {
   border-top-color: #231f20;
   outline: none;
 }
 
-.arrow-up:active,
-.arrow-down:active {
+.arrow:active {
+  border-top-color: #81b3d2;
+}
+
+.checked .arrow-down{
   border-top-color: #81b3d2;
 }
 
