@@ -482,13 +482,14 @@ button {
   width: 100%;
   min-height: 38px;
   padding: 7px 10px;
+  padding-right: 45px;
   
   line-height: 26px;
   font-weight: bold;
   color: #000000;
   
   background-color: #f2f2f2;
-  border: none;
+  border: 2px solid transparent;
 }
 
 .search-item input::-webkit-input-placeholder {
