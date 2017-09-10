@@ -92,6 +92,10 @@ button {
           transform: translate(-50%);
 }
 
+.header-logo img {
+  display: block;
+}
+
 .navigation-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -204,13 +208,15 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 /* Номерные карточки. */
 
 .feature-description {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-height: 256px;
   -ms-flex-preferred-size: 33%;
       flex-basis: 33%;
@@ -224,7 +230,8 @@ button {
 }
 
 .feature-description:nth-child(2) {
-  flex-basis: 34%;
+  -ms-flex-preferred-size: 34%;
+      flex-basis: 34%;
 }
 
 .feature-description:nth-child(2) .feature-words {
@@ -288,7 +295,8 @@ button {
 /* Безномерные карточки. */
 
 .feature-item {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-height: 330px;
   position: relative;
   
@@ -348,7 +356,7 @@ button {
 }
 
 .hotel-search h2{
-  margin-bottom: 28px;
+  margin-bottom: 26px;
   
   font-size: 30px;
   line-height: 36px;
@@ -389,21 +397,28 @@ button {
 .search-form {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  margin-left: -284px;
 
   z-index: 2;
   
   display: none;
   
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  
+          box-sizing: border-box;
   width: 568px;
   padding: 55px;
+  padding-top: 52px;
   
   background-color: #ffffff;
-  box-shadow: 0px 5px 5px 2px #ccd6b8;
+  -webkit-box-shadow: 0px 5px 5px 2px #ccd6b8;
+          box-shadow: 0px 5px 5px 2px #ccd6b8;
   
-  animation-name: form-movie;
-  animation-duration: 0.6s;
+  -webkit-animation-name: form-movie;
+  
+          animation-name: form-movie;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
 }
 
 .search-form-show {
@@ -422,7 +437,7 @@ button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  margin-bottom: 26px;
+  margin-bottom: 27px;
 }
 
 .search-item:nth-child(2) {
@@ -481,7 +496,7 @@ button {
           box-sizing: border-box;
   width: 100%;
   min-height: 38px;
-  padding: 7px 10px;
+  padding: 5px 10px;
   padding-right: 45px;
   
   line-height: 26px;
@@ -502,7 +517,12 @@ button {
   color: #000000;
 }
 
-.search-item input::-moz-placeholder {
+.search-item input::-webkit-input-placeholder {
+  text-transform: uppercase;
+  color: #000000;
+}
+
+.search-item input:-ms-input-placeholder {
   text-transform: uppercase;
   color: #000000;
 }
@@ -591,7 +611,8 @@ button {
 /* Кнопки "+" и "-". */
 
 .branch-button {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   width: 38px;
   height: 38px;
   
@@ -623,7 +644,7 @@ button {
 .item-button {
   width: 100%;
   padding: 16px;
-  margin-top: 26px;
+  margin-top: 27px;
   
   font-family: inherit;
   font-size: 21px;
@@ -649,22 +670,39 @@ button {
 
 /* Форма поиска. Анимация. */
 
-@keyframes form-movie {
+@-webkit-keyframes form-movie {
   0% {
-    transform: translate(-50%, -80px);
+    -webkit-transform: translate(0%, -80px);
+            transform: translate(0%, -80px);
     opacity: 0;
   }
 }
 
+@keyframes form-movie {
+  0% {
+    -webkit-transform: translate(-0%, -80px);
+            transform: translate(-0%, -80px);
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes form-error-shake {
+  0%, 100% { -webkit-transform: translate(0%, 0); transform: translate(0%, 0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translate(-3%, 0); transform: translate(3%, 0); }
+  20%, 40%, 60%, 80% { -webkit-transform: translate(3%, 0); transform: translate(3%, 0); } 
+}
+
 @keyframes form-error-shake {
-  0%, 100% { transform: translate(-50%, 0); }
-  10%, 30%, 50%, 70%, 90% { transform: translate(-53%, 0); }
-  20%, 40%, 60%, 80% { transform: translate(-48%, 0); } 
+  0%, 100% { -webkit-transform: translate(0%, 0); transform: translate(-0%, 0); }
+  10%, 30%, 50%, 70%, 90% { -webkit-transform: translate(-3%, 0); transform: translate(-3%, 0); }
+  20%, 40%, 60%, 80% { -webkit-transform: translate(3%, 0); transform: translate(3%, 0); } 
 }
 
 .form-error {
-  animation-name: form-error-shake;
-  animation-duration: 0.6s;
+  -webkit-animation-name: form-error-shake;
+          animation-name: form-error-shake;
+  -webkit-animation-duration: 0.6s;
+          animation-duration: 0.6s;
 }
 
 /* Карта. */
@@ -858,7 +896,8 @@ button {
 /* Контейнер с ползунком. */
 
 .price-controls {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
   min-width: 222px;
   position: relative;
   
@@ -926,16 +965,6 @@ button {
 }
 
 .price-controls input:-ms-input-placeholder {
-  color: #ffffff;
-  text-transform: uppercase;  
-}
-
-.price-controls input::-moz-placeholder {
-  color: #ffffff;
-  text-transform: uppercase;  
-}
-
-.price-controls input:-moz-placeholder {
   color: #ffffff;
   text-transform: uppercase;  
 }
