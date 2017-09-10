@@ -40,6 +40,7 @@ button {
 .container {
   position: relative;
   
+  min-width: 768px;
   max-width: 1200px;
   margin: 0 auto;
   
@@ -221,6 +222,7 @@ button {
   -ms-flex-preferred-size: 33%;
       flex-basis: 33%;
   padding-top: 47px;
+  padding-bottom: 39px;
   
   text-align: center;
   color: #333333;
@@ -247,6 +249,8 @@ button {
 }
 
 .feature-number {
+  width: 160px;
+  margin: 0 auto;
   margin-top: 24px;
 }
 
@@ -271,7 +275,7 @@ button {
 .feature-image {
   -ms-flex-preferred-size: 67%;
       flex-basis: 67%;
-  height: 256px;
+  min-height: 256px;
   
   overflow: hidden;
   
@@ -300,15 +304,22 @@ button {
   min-height: 330px;
   position: relative;
   
-  -ms-flex-preferred-size: 33.333333333%;
+  -ms-flex-preferred-size: 33%;
   
-      flex-basis: 33.333333333%;
+      flex-basis: 33%;
   padding-top: 56px;
+  padding-bottom: 62px;
   
   text-align: center;
 }
 
+.feature-item:nth-child(2) {
+  flex-basis: 34%;
+}
+
 .feature-item h2 {
+  width: 80%;
+  margin: 0 auto;
   margin-top: 27px;
   margin-bottom: 24px;
   
@@ -408,7 +419,6 @@ button {
           box-sizing: border-box;
   width: 568px;
   padding: 55px;
-  padding-top: 52px;
   
   background-color: #ffffff;
   -webkit-box-shadow: 0px 5px 5px 2px #ccd6b8;
