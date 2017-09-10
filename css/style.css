@@ -1075,7 +1075,7 @@ input:disabled~label {
   padding: 29px 6%;
   
   background-color: #ffffff;
-  border-bottom: 2px solid #f6f6f6;
+  border-bottom: 1px solid #f6f6f6;
 }
 
 .results-filter h2 {
